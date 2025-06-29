@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -70,7 +69,7 @@ const TestimonialsSection = () => {
                 {/* Author */}
                 <div className="flex items-center space-x-4">
                   <Avatar className="group-hover:scale-110 transition-transform">
-                    <AvatarFallback className="bg-gradient-to-br from-nexo-orange-500 to-nexo-teal-500 text-white font-bold">
+                    <AvatarFallback className="bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600 text-white font-bold">
                       {testimonial.avatar}
                     </AvatarFallback>
                   </Avatar>

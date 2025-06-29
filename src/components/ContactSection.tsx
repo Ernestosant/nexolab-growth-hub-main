@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -56,7 +55,7 @@ const ContactSection = () => {
               {contactInfo.map((info, index) => (
                 <Card key={index} className="p-6 glass-card border-0 hover:scale-105 transition-transform group">
                   <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-gradient-to-br from-nexo-orange-500 to-nexo-teal-500 rounded-xl text-white group-hover:scale-110 transition-transform">
+                    <div className="p-3 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600 rounded-xl text-white group-hover:scale-110 transition-transform accent-glow">
                       {info.icon}
                     </div>
                     <div>
@@ -82,7 +81,7 @@ const ContactSection = () => {
                     href={social.url}
                     className="p-3 glass-card rounded-xl hover:scale-110 transition-all group border-0"
                   >
-                    <div className="text-nexo-orange-500 group-hover:text-nexo-teal-500 transition-colors">
+                    <div className="text-nexo-orange-500 group-hover:text-nexo-blue-600 transition-colors">
                       {social.icon}
                     </div>
                   </a>
@@ -91,12 +90,12 @@ const ContactSection = () => {
             </div>
 
             {/* Quick Action */}
-            <Card className="p-6 bg-gradient-to-br from-nexo-orange-500 to-nexo-teal-500 text-white border-0">
+            <Card className="p-6 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-700 text-white border-0 accent-glow">
               <h3 className="text-xl font-bold mb-2">¿Necesitas ayuda inmediata?</h3>
               <p className="mb-4 opacity-90">
                 Programa una llamada gratuita de 30 minutos con nuestro equipo.
               </p>
-              <Button className="bg-white text-nexo-orange-500 hover:bg-gray-100">
+              <Button className="bg-white text-nexo-blue-700 hover:bg-nexo-white-100 hover:text-nexo-blue-800 transition-colors">
                 Agendar Reunión
               </Button>
             </Card>
@@ -145,7 +144,7 @@ const ContactSection = () => {
               <Button 
                 type="submit"
                 size="lg"
-                className="w-full bg-nexo-orange-500 hover:bg-nexo-orange-600 text-white py-6 text-lg rounded-full"
+                className="w-full bg-nexo-orange-500 hover:bg-nexo-orange-600 text-white py-6 text-lg rounded-full accent-glow"
               >
                 Enviar Mensaje
               </Button>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -56,7 +55,7 @@ const ServicesSection = () => {
               }}
             >
               <div className="space-y-4">
-                <div className="p-4 bg-gradient-to-br from-nexo-orange-500 to-nexo-teal-500 rounded-xl text-white w-fit group-hover:scale-110 transition-transform">
+                <div className="p-4 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600 rounded-xl text-white w-fit group-hover:scale-110 transition-transform accent-glow">
                   {service.icon}
                 </div>
                 
@@ -71,7 +70,7 @@ const ServicesSection = () => {
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="text-sm flex items-center">
-                      <div className="w-2 h-2 bg-nexo-teal-500 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-nexo-blue-500 rounded-full mr-3"></div>
                       {feature}
                     </li>
                   ))}
@@ -79,7 +78,7 @@ const ServicesSection = () => {
                 
                 <Button 
                   variant="outline" 
-                  className="w-full mt-4 group-hover:bg-nexo-orange-500 group-hover:text-white group-hover:border-nexo-orange-500 transition-colors"
+                  className="w-full mt-4 group-hover:bg-nexo-orange-500 group-hover:text-white group-hover:border-nexo-orange-500 transition-colors border-nexo-blue-200"
                 >
                   Ver más
                 </Button>
@@ -91,7 +90,7 @@ const ServicesSection = () => {
         <div className="text-center mt-12">
           <Button 
             size="lg"
-            className="bg-nexo-teal-500 hover:bg-nexo-teal-600 text-white px-8 py-6 text-lg rounded-full"
+            className="bg-nexo-blue-600 hover:bg-nexo-blue-700 text-white px-8 py-6 text-lg rounded-full accent-glow"
           >
             Solicitar Cotización
           </Button>

@@ -75,7 +75,7 @@ const HeroSection = () => {
                   }}
                 >
                   <div className="flex flex-col items-center text-center space-y-4">
-                    <div className="p-3 bg-gradient-to-br from-nexo-orange-500 to-nexo-teal-500 rounded-xl text-white group-hover:scale-110 transition-transform">
+                    <div className="p-3 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600 rounded-xl text-white group-hover:scale-110 transition-transform accent-glow">
                       {objective.icon}
                     </div>
                     <div className="flex-1">
@@ -87,7 +87,7 @@ const HeroSection = () => {
                       </p>
                       <Button 
                         variant="link" 
-                        className="text-nexo-teal-500 p-0 h-auto opacity-0 group-hover:opacity-100 transition-opacity"
+                        className="text-nexo-blue-600 hover:text-nexo-orange-500 p-0 h-auto opacity-0 group-hover:opacity-100 transition-all duration-300"
                       >
                         Saber más →
                       </Button>

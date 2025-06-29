@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
@@ -30,18 +29,18 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-nexo-gray-900 text-white py-16">
+    <footer className="bg-nexo-blue-900 text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Logo and Description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-nexo-orange-500 to-nexo-teal-500 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600 rounded-lg flex items-center justify-center accent-glow">
                 <span className="text-white font-bold text-xl">N</span>
               </div>
               <span className="text-2xl font-bold">NexoLab</span>
             </div>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-nexo-blue-100 leading-relaxed">
               Impulsamos el crecimiento de tu empresa con estrategias de marketing 
               digital y tecnología innovadora.
             </p>
@@ -50,10 +49,10 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.url}
-                  className="p-2 bg-gray-800 rounded-lg hover:bg-nexo-orange-500 transition-colors group"
+                  className="p-2 bg-nexo-blue-800 rounded-lg hover:bg-nexo-orange-500 transition-colors group"
                   title={social.name}
                 >
-                  <div className="text-gray-300 group-hover:text-white transition-colors">
+                  <div className="text-nexo-blue-200 group-hover:text-white transition-colors">
                     {social.icon}
                   </div>
                 </a>
@@ -64,7 +63,7 @@ const Footer = () => {
           {/* Footer Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="text-lg font-semibold mb-4 text-nexo-orange-500">
+              <h3 className="text-lg font-semibold mb-4 text-nexo-orange-400">
                 {category}
               </h3>
               <ul className="space-y-3">
@@ -72,7 +71,7 @@ const Footer = () => {
                   <li key={index}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors flex items-center space-x-2"
+                      className="text-nexo-blue-200 hover:text-white transition-colors flex items-center space-x-2"
                     >
                       {link.icon && <span>{link.icon}</span>}
                       <span>{link.name}</span>
@@ -85,16 +84,16 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-8">
+        <div className="border-t border-nexo-blue-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-400 text-sm">
+            <div className="text-nexo-blue-300 text-sm">
               © 2024 NexoLab. Todos los derechos reservados.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-nexo-blue-300 hover:text-white transition-colors">
                 Política de Privacidad
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-nexo-blue-300 hover:text-white transition-colors">
                 Términos de Servicio
               </a>
             </div>
