@@ -1,96 +1,108 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Lightbulb, BarChart3, Cpu } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
+import TypewriterText from './TypewriterText';
 
 const HeroSection = () => {
   const objectives = [
     {
-      icon: <Lightbulb className="h-8 w-8" />,
+      icon: <img src="/icons/idea.gif" alt="Innovation" className="h-12 w-12" />,
       title: 'Innovación',
-      description: 'Soluciones creativas que marcan la diferencia en tu industria'
+      description: 'Soluciones creativas que marcan la diferencia'
     },
     {
-      icon: <BarChart3 className="h-8 w-8" />,
+      icon: <img src="/icons/grafico-de-linea (1).gif" alt="Measurable Results" className="h-12 w-12" />,
       title: 'Resultados Medibles',
-      description: 'Métricas claras que demuestran el crecimiento de tu negocio'
+      description: 'Métricas claras que demuestran crecimiento'
     },
     {
-      icon: <Cpu className="h-8 w-8" />,
-      title: 'Tecnología Aplicada',
-      description: 'Herramientas avanzadas para potenciar tu marketing digital'
+      icon: <img src="/icons/tecnologia.gif" alt="Applied Technology" className="h-12 w-12" />,
+      title: 'Tecnología Aplicada al Marketing',
+      description: 'Herramientas avanzadas para potenciar tu negocio'
     }
   ];
 
+  const scrollToServices = () => {
+    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section id="home" className="min-h-screen hero-gradient pt-20 pb-16">
+    <section id="home" className="min-h-screen hero-gradient pt-20 pb-8">
       <div className="container mx-auto px-4">
-        {/* Single column layout with vertical flow */}
-        <div className="flex flex-col items-center space-y-12 min-h-[80vh] justify-center">
+        <div className="flex flex-col items-center space-y-8 min-h-[90vh] justify-center">
           
-          {/* Top Content - Text Section */}
-          <div className="text-center space-y-8 animate-slide-in-left max-w-4xl">
+          {/* Hero Content - More compact */}
+          <div className="text-center space-y-6 animate-slide-in-left max-w-4xl">
             <div className="space-y-4">
-              <p className="text-nexo-orange-500 font-semibold text-lg">
-                PODEROSA HACE HERR
-              </p>
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
                 Impulsamos tu crecimiento con{' '}
                 <span className="gradient-text">Tecnología</span> y{' '}
-                <span className="gradient-text">creatividad</span>
+                <span className="gradient-text">Creatividad</span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Estrategias de crecimiento y marketing digital aplicadas 
-                a empresas que buscan resultados extraordinarios.
-              </p>
+              <div className="text-lg max-w-2xl mx-auto min-h-[3rem] flex items-center justify-center">
+                <TypewriterText
+                  text="Estrategias de marketing digital que generan resultados extraordinarios para tu empresa."
+                  speed={30}
+                  delay={800}
+                  className="text-lg"
+                />
+              </div>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-nexo-orange-500 hover:bg-nexo-orange-600 text-white px-8 py-6 text-lg rounded-full"
+                onClick={scrollToServices}
+                className="bg-nexo-orange-500 hover:bg-nexo-orange-600 text-white px-8 py-4 text-base rounded-full"
               >
                 Nuestros Servicios
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
-                className="px-8 py-6 text-lg rounded-full border-2"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-8 py-4 text-base rounded-full border-2"
               >
                 Contacto
               </Button>
             </div>
           </div>
 
-          {/* Bottom Content - Objective Cards in Horizontal Layout */}
-          <div className="w-full max-w-6xl">
-            <div className="grid md:grid-cols-3 gap-6">
+          {/* Robot/Logo pointing to objectives */}
+          <div className="relative w-full max-w-5xl">
+            {/* Animated Robot/Logo in center */}
+            <div className="flex justify-center mb-6">
+              <div className="relative">
+                <div className="w-16 h-16 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-700 rounded-2xl flex items-center justify-center accent-glow animate-bounce">
+                  <span className="text-white font-bold text-2xl">N</span>
+                </div>
+                <ArrowDown className="h-6 w-6 text-nexo-orange-500 mx-auto mt-2 animate-pulse" />
+              </div>
+            </div>
+
+            {/* Objective Cards - More compact */}
+            <div className="grid md:grid-cols-3 gap-4">
               {objectives.map((objective, index) => (
                 <Card 
                   key={index}
-                  className="glass-card p-6 hover:scale-105 transition-all duration-300 cursor-pointer group"
+                  className="glass-card card-enhanced p-4 hover:scale-105 transition-all duration-300 cursor-pointer group border-0"
                   style={{ 
                     animationDelay: `${index * 0.2}s`,
                     animation: 'fade-in 0.6s ease-out forwards'
                   }}
                 >
-                  <div className="flex flex-col items-center text-center space-y-4">
-                    <div className="p-3 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600 rounded-xl text-white group-hover:scale-110 transition-transform accent-glow">
+                  <div className="flex flex-col items-center text-center space-y-3">
+                    <div className="p-2 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600 rounded-lg text-white group-hover:scale-110 transition-transform accent-glow">
                       {objective.icon}
                     </div>
-                    <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2 group-hover:text-nexo-orange-500 transition-colors">
+                    <div>
+                      <h3 className="font-bold text-base mb-1 group-hover:text-nexo-orange-500 transition-colors">
                         {objective.title}
                       </h3>
-                      <p className="text-muted-foreground text-sm mb-4">
+                      <p className="text-muted-foreground text-sm">
                         {objective.description}
                       </p>
-                      <Button 
-                        variant="link" 
-                        className="text-nexo-blue-600 hover:text-nexo-orange-500 p-0 h-auto opacity-0 group-hover:opacity-100 transition-all duration-300"
-                      >
-                        Saber más →
-                      </Button>
                     </div>
                   </div>
                 </Card>

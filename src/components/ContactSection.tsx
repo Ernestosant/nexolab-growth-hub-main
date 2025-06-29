@@ -36,26 +36,26 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section id="contact" className="py-16 bg-transparent">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+        <div className="text-center mb-12 animate-fade-in text-container-enhanced max-w-4xl mx-auto">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
             ¿Listo para <span className="gradient-text">crecer juntos?</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-enhanced max-w-2xl mx-auto">
             Conversemos sobre tu proyecto. Nuestro equipo está listo para 
             ayudarte a alcanzar tus objetivos de crecimiento.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-10">
           {/* Contact Info */}
-          <div className="space-y-8 animate-slide-in-left">
-            <div className="grid sm:grid-cols-2 gap-6">
+          <div className="space-y-6 animate-slide-in-left">
+            <div className="grid sm:grid-cols-2 gap-4">
               {contactInfo.map((info, index) => (
-                <Card key={index} className="p-6 glass-card border-0 hover:scale-105 transition-transform group">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600 rounded-xl text-white group-hover:scale-110 transition-transform accent-glow">
+                <Card key={index} className="p-5 glass-card card-enhanced border-0 hover:scale-105 transition-transform group">
+                  <div className="flex items-start space-x-3">
+                    <div className="p-2 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600 rounded-lg text-white group-hover:scale-110 transition-transform accent-glow">
                       {info.icon}
                     </div>
                     <div>
@@ -72,14 +72,14 @@ const ContactSection = () => {
             </div>
 
             {/* Social Links */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold">Síguenos en redes sociales</h3>
-              <div className="flex space-x-4">
+            <div className="space-y-3">
+              <h3 className="text-lg font-semibold">Síguenos en redes sociales</h3>
+              <div className="flex space-x-3">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
                     href={social.url}
-                    className="p-3 glass-card rounded-xl hover:scale-110 transition-all group border-0"
+                    className="p-3 glass-card card-enhanced rounded-lg hover:scale-110 transition-all group border-0"
                   >
                     <div className="text-nexo-orange-500 group-hover:text-nexo-blue-600 transition-colors">
                       {social.icon}
@@ -90,9 +90,9 @@ const ContactSection = () => {
             </div>
 
             {/* Quick Action */}
-            <Card className="p-6 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-700 text-white border-0 accent-glow">
-              <h3 className="text-xl font-bold mb-2">¿Necesitas ayuda inmediata?</h3>
-              <p className="mb-4 opacity-90">
+            <Card className="p-5 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-700 text-white border-0 accent-glow">
+              <h3 className="text-lg font-bold mb-2">¿Necesitas ayuda inmediata?</h3>
+              <p className="mb-3 opacity-90 text-sm">
                 Programa una llamada gratuita de 30 minutos con nuestro equipo.
               </p>
               <Button className="bg-white text-nexo-blue-700 hover:bg-nexo-white-100 hover:text-nexo-blue-800 transition-colors">
@@ -102,26 +102,26 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="p-8 glass-card border-0 animate-slide-in-right">
-            <form className="space-y-6">
+          <Card className="p-6 glass-card card-enhanced border-0 animate-slide-in-right">
+            <form className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-2">Nombre *</label>
+                  <label className="block text-sm font-medium mb-1">Nombre *</label>
                   <Input placeholder="Tu nombre completo" className="bg-background/50" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Email *</label>
+                  <label className="block text-sm font-medium mb-1">Email *</label>
                   <Input type="email" placeholder="tu@email.com" className="bg-background/50" />
                 </div>
               </div>
               
               <div>
-                <label className="block text-sm font-medium mb-2">Empresa</label>
+                <label className="block text-sm font-medium mb-1">Empresa</label>
                 <Input placeholder="Nombre de tu empresa" className="bg-background/50" />
               </div>
               
               <div>
-                <label className="block text-sm font-medium mb-2">Servicio de interés</label>
+                <label className="block text-sm font-medium mb-1">Servicio de interés</label>
                 <select className="w-full p-3 border rounded-md bg-background/50">
                   <option>Selecciona un servicio</option>
                   <option>Branding</option>
@@ -133,10 +133,10 @@ const ContactSection = () => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium mb-2">Mensaje *</label>
+                <label className="block text-sm font-medium mb-1">Mensaje *</label>
                 <Textarea 
                   placeholder="Cuéntanos sobre tu proyecto y objetivos..."
-                  rows={4}
+                  rows={3}
                   className="bg-background/50"
                 />
               </div>
@@ -144,7 +144,7 @@ const ContactSection = () => {
               <Button 
                 type="submit"
                 size="lg"
-                className="w-full bg-nexo-orange-500 hover:bg-nexo-orange-600 text-white py-6 text-lg rounded-full accent-glow"
+                className="w-full bg-nexo-orange-500 hover:bg-nexo-orange-600 text-white py-4 text-base rounded-full accent-glow"
               >
                 Enviar Mensaje
               </Button>

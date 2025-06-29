@@ -1,87 +1,84 @@
 import React from 'react';
 import { Card } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Star, Quote } from 'lucide-react';
 
 const TestimonialsSection = () => {
   const testimonials = [
     {
       name: 'María González',
-      company: 'TechStart Solutions',
-      role: 'CEO',
-      avatar: 'MG',
-      content: 'NexoLab transformó completamente nuestra presencia digital. En 6 meses, aumentamos nuestras ventas online en un 200%. Su equipo es excepcional.',
-      rating: 5
+      position: 'CEO, TechStartup',
+      company: 'Empresa de Software',
+      rating: 5,
+      text: 'NexoLab transformó completamente nuestra presencia digital. En 6 meses aumentamos nuestras ventas en un 250% y mejoramos significativamente nuestro ROI.',
+      avatar: '👩‍💼'
     },
     {
       name: 'Carlos Rodríguez',
-      company: 'Innovate Corp',
-      role: 'Director de Marketing',
-      avatar: 'CR',
-      content: 'La estrategia de marketing digital que desarrollaron superó todas nuestras expectativas. ROI increíble y resultados medibles desde el primer mes.',
-      rating: 5
+      position: 'Director de Marketing',
+      company: 'E-commerce Fashion',
+      rating: 5,
+      text: 'Su estrategia de automatización nos permitió captar 300% más leads mientras reducíamos el tiempo invertido en gestión manual. Resultados increíbles.',
+      avatar: '👨‍💼'
     },
     {
-      name: 'Ana Martínez',
-      company: 'Creative Studio',
-      role: 'Fundadora',
-      avatar: 'AM',
-      content: 'Profesionalismo y creatividad en cada proyecto. NexoLab no solo cumple, sino que supera las expectativas. Altamente recomendados.',
-      rating: 5
+      name: 'Ana Martín',
+      position: 'Fundadora',
+      company: 'Clínica Dental',
+      rating: 5,
+      text: 'La gestión de redes sociales de NexoLab nos ayudó a conectar con pacientes de forma auténtica. Hemos visto un crecimiento del 180% en consultas.',
+      avatar: '👩‍⚕️'
     }
   ];
 
   return (
-    <section className="py-20 hero-gradient">
+    <section id="testimonials" className="py-16 bg-transparent">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Lo que dicen nuestros <span className="gradient-text">clientes</span>
+        <div className="max-w-4xl mx-auto text-center mb-12 text-container-enhanced">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 gradient-text">
+            Lo que Dicen Nuestros Clientes
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Testimonios reales de empresas que han transformado su crecimiento 
-            con nuestras estrategias de marketing y tecnología.
+          <p className="text-lg text-enhanced">
+            Resultados reales de empresas que confiaron en nosotros
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <Card 
               key={index}
-              className="p-8 glass-card hover:scale-105 transition-all duration-300 cursor-pointer group border-0"
-              style={{ 
-                animationDelay: `${index * 0.2}s`,
-                animation: 'fade-in 0.6s ease-out forwards'
-              }}
+              className="glass-card testimonial-card-enhanced p-6 hover:scale-105 transition-all duration-300 group relative border-0"
             >
-              <div className="space-y-6">
-                {/* Stars */}
-                <div className="flex space-x-1">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <div key={i} className="w-5 h-5 text-yellow-400">⭐</div>
-                  ))}
-                </div>
-
-                {/* Content */}
-                <blockquote className="text-muted-foreground italic leading-relaxed">
-                  "{testimonial.content}"
-                </blockquote>
-
-                {/* Author */}
-                <div className="flex items-center space-x-4">
-                  <Avatar className="group-hover:scale-110 transition-transform">
-                    <AvatarFallback className="bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600 text-white font-bold">
-                      {testimonial.avatar}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="font-semibold group-hover:text-nexo-orange-500 transition-colors">
-                      {testimonial.name}
-                    </div>
-                    <div className="text-sm text-muted-foreground">
-                      {testimonial.role} • {testimonial.company}
+              <div className="absolute top-4 right-4 text-nexo-orange-500/20 group-hover:text-nexo-orange-500/40 transition-colors">
+                <Quote className="h-8 w-8" />
+              </div>
+              
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    <div className="text-2xl">{testimonial.avatar}</div>
+                    <div>
+                      <h3 className="font-bold text-base group-hover:text-nexo-orange-500 transition-colors">
+                        {testimonial.name}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        {testimonial.position}
+                      </p>
+                      <p className="text-xs text-nexo-blue-600 font-medium">
+                        {testimonial.company}
+                      </p>
                     </div>
                   </div>
                 </div>
+
+                <div className="flex space-x-1 mb-3">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-nexo-orange-500 text-nexo-orange-500" />
+                  ))}
+                </div>
+
+                <p className="text-muted-foreground text-sm leading-relaxed italic">
+                  "{testimonial.text}"
+                </p>
               </div>
             </Card>
           ))}

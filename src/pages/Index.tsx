@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
@@ -6,6 +5,7 @@ import ServicesSection from '@/components/ServicesSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import AnimatedBackground from '@/components/AnimatedBackground';
 
 const Index = () => {
   const [isDark, setIsDark] = useState(false);
@@ -35,13 +35,18 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Header isDark={isDark} toggleTheme={toggleTheme} />
-      <HeroSection />
-      <ServicesSection />
-      <TestimonialsSection />
-      <ContactSection />
-      <Footer />
+    <div className="min-h-screen text-foreground relative overflow-hidden">
+      <AnimatedBackground isDark={isDark} />
+      <div className="relative z-10">
+        <Header isDark={isDark} toggleTheme={toggleTheme} />
+        <HeroSection />
+        <div className="space-y-0">
+          <ServicesSection />
+          <TestimonialsSection />
+        </div>
+        <ContactSection />
+        <Footer />
+      </div>
     </div>
   );
 };

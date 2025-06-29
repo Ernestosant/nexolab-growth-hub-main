@@ -1,99 +1,87 @@
 import React from 'react';
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Palette, Share2, Megaphone, Globe } from 'lucide-react';
+import { Brain, Globe, Palette, Share2, Megaphone, Settings } from 'lucide-react';
 
 const ServicesSection = () => {
   const services = [
     {
-      icon: <Palette className="h-8 w-8" />,
+      icon: <Brain className="h-6 w-6" />,
+      title: 'Desarrollo de Soluciones con IA',
+      description: 'Implementamos soluciones inteligentes de vanguardia que revolucionan tu negocio con tecnología de IA de última generación, posicionándote por delante de la competencia.',
+      features: ['Machine Learning avanzado', 'Automatización inteligente', 'Análisis predictivo']
+    },
+    {
+      icon: <Globe className="h-6 w-6" />,
+      title: 'Desarrollo Web & Mobile',
+      description: 'Aplicaciones web y móviles modernas, escalables y optimizadas que transforman tu presencia digital y mejoran la experiencia de tus usuarios.',
+      features: ['Apps multiplataforma', 'Progressive Web Apps', 'Backend robusto']
+    },
+    {
+      icon: <Palette className="h-6 w-6" />,
       title: 'Branding',
-      description: 'Creamos identidades visuales únicas que conectan con tu audiencia y fortalecen tu presencia en el mercado.',
+      description: 'Identidades visuales únicas que conectan con tu audiencia y fortalecen tu presencia.',
       features: ['Diseño de logos', 'Manual de marca', 'Identidad visual']
     },
     {
-      icon: <Share2 className="h-8 w-8" />,
-      title: 'Redes Sociales',
-      description: 'Gestión integral de tus redes sociales con contenido estratégico que genera engagement y conversiones.',
+      icon: <Share2 className="h-6 w-6" />,
+      title: 'Gestión de Redes Sociales',
+      description: 'Gestión integral con contenido estratégico que genera engagement y conversiones.',
       features: ['Gestión de contenido', 'Community management', 'Estrategia social']
     },
     {
-      icon: <Megaphone className="h-8 w-8" />,
-      title: 'Publicidad Digital',
-      description: 'Campañas publicitarias optimizadas en Google Ads y Meta Ads que maximizan tu retorno de inversión.',
+      icon: <Megaphone className="h-6 w-6" />,
+      title: 'Campañas Publicitarias',
+      description: 'Campañas optimizadas en Google y Meta Ads que maximizan tu retorno de inversión.',
       features: ['Google Ads', 'Meta Ads', 'Optimización ROI']
     },
     {
-      icon: <Globe className="h-8 w-8" />,
-      title: 'Diseño Web',
-      description: 'Sitios web modernos, responsivos y optimizados para conversión que reflejan la esencia de tu marca.',
-      features: ['Diseño responsive', 'UX/UI optimizada', 'SEO friendly']
+      icon: <Settings className="h-6 w-6" />,
+      title: 'Automatización y CRM',
+      description: 'Sistemas automatizados para optimizar procesos y mejorar la experiencia del cliente.',
+      features: ['Marketing automation', 'CRM integration', 'Lead nurturing']
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="services" className="py-16 bg-transparent">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Nuestros <span className="gradient-text">Servicios</span>
+        <div className="max-w-4xl mx-auto text-center mb-12 text-container-enhanced">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 gradient-text">
+            Nuestros Servicios
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ofrecemos soluciones integrales de marketing digital y tecnología 
-            para impulsar el crecimiento de tu empresa de manera estratégica.
+          <p className="text-lg text-enhanced">
+            Soluciones estratégicas diseñadas para maximizar tu potencial digital
           </p>
         </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {services.map((service, index) => (
             <Card 
               key={index}
-              className="group p-6 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer border-0 glass-card"
-              style={{ 
-                animationDelay: `${index * 0.1}s`,
-                animation: 'fade-in 0.6s ease-out forwards'
-              }}
+              className="glass-card card-enhanced group p-5 hover:scale-105 transition-all duration-300 cursor-pointer border-0"
             >
-              <div className="space-y-4">
-                <div className="p-4 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600 rounded-xl text-white w-fit group-hover:scale-110 transition-transform accent-glow">
-                  {service.icon}
+              <div className="flex flex-col space-y-3">
+                <div className="flex items-center space-x-3">
+                  <div className="p-2 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600 rounded-lg text-white group-hover:scale-110 transition-transform">
+                    {service.icon}
+                  </div>
+                  <h3 className="font-bold text-lg group-hover:text-nexo-orange-500 transition-colors">
+                    {service.title}
+                  </h3>
                 </div>
-                
-                <h3 className="text-xl font-bold group-hover:text-nexo-orange-500 transition-colors">
-                  {service.title}
-                </h3>
-                
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {service.description}
                 </p>
-                
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="text-sm flex items-center">
-                      <div className="w-2 h-2 bg-nexo-blue-500 rounded-full mr-3"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                
                 <Button 
-                  variant="outline" 
-                  className="w-full mt-4 group-hover:bg-nexo-orange-500 group-hover:text-white group-hover:border-nexo-orange-500 transition-colors border-nexo-blue-200"
+                  variant="link" 
+                  className="text-nexo-blue-600 hover:text-nexo-orange-500 p-0 h-auto justify-start text-sm"
                 >
-                  Ver más
+                  Ver más →
                 </Button>
               </div>
             </Card>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Button 
-            size="lg"
-            className="bg-nexo-blue-600 hover:bg-nexo-blue-700 text-white px-8 py-6 text-lg rounded-full accent-glow"
-          >
-            Solicitar Cotización
-          </Button>
         </div>
       </div>
     </section>
