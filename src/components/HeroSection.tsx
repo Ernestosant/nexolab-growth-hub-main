@@ -26,7 +26,7 @@ const HeroSection = () => {
     <section id="home" className="min-h-screen hero-gradient pt-20 pb-16">
       <div className="container mx-auto px-4">
         {/* Single column layout with vertical flow */}
-        <div className="flex flex-col items-center space-y-16 min-h-[80vh] justify-center">
+        <div className="flex flex-col items-center space-y-12 min-h-[80vh] justify-center">
           
           {/* Top Content - Text Section */}
           <div className="text-center space-y-8 animate-slide-in-left max-w-4xl">
@@ -59,20 +59,6 @@ const HeroSection = () => {
               >
                 Contacto
               </Button>
-            </div>
-          </div>
-
-          {/* Middle Content - Robot Illustration */}
-          <div className="relative animate-slide-in-right">
-            <div className="relative z-10 flex justify-center">
-              <div className="w-64 h-64 relative animate-float">
-                <div className="w-full h-full bg-gradient-to-br from-nexo-orange-500 to-nexo-teal-500 rounded-3xl flex items-center justify-center shadow-2xl">
-                  <div className="text-8xl">🤖</div>
-                </div>
-                {/* Floating elements around robot */}
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-nexo-blue-500 rounded-full animate-pulse-glow"></div>
-                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-nexo-teal-500 rounded-full animate-pulse-glow"></div>
-              </div>
             </div>
           </div>
 
