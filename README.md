@@ -1,73 +1,107 @@
-# Welcome to your Lovable project
+# NexoLab Growth Hub
 
-## Project info
+## About the Project
 
-**URL**: https://lovable.dev/projects/b8abf21f-3e54-4e5a-8352-9e6cd7c4a2f9
+NexoLab Growth Hub is a modern landing page for a digital marketing agency specializing in comprehensive growth solutions for businesses. The website showcases NexoLab's expertise in branding, social media management, digital advertising, and web design.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **Modern Design**: Clean and professional interface with a focus on user experience
+- **Responsive Layout**: Fully responsive design that works seamlessly across all devices
+- **Service Showcase**: Detailed presentation of digital marketing services
+- **Client Testimonials**: Social proof through customer testimonials
+- **Contact Integration**: Easy-to-use contact forms and multiple communication channels
+- **Interactive Elements**: Smooth animations and transitions for enhanced user engagement
 
-**Use Lovable**
+## Services Highlighted
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b8abf21f-3e54-4e5a-8352-9e6cd7c4a2f9) and start prompting.
+- **Branding**: Complete brand identity development
+- **Social Media Management**: Strategic social media presence and engagement
+- **Digital Advertising**: Targeted advertising campaigns across platforms
+- **Web Design**: Custom website development and optimization
 
-Changes made via Lovable will be committed automatically to this repo.
+## Tech Stack
 
-**Use your preferred IDE**
+This project is built with modern web technologies:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Vite** - Fast build tool and development server
+- **TypeScript** - Type-safe JavaScript development
+- **React** - Component-based UI library
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn-ui** - High-quality UI components
+- **Lucide React** - Modern icon library
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Getting Started
 
-Follow these steps:
+### Prerequisites
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+Make sure you have Node.js and npm installed on your machine. You can install them using [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+
+### Installation
+
+1. Clone the repository:
+```bash
 git clone <YOUR_GIT_URL>
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Navigate to the project directory:
+```bash
+cd nexolab-growth-hub
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+3. Install dependencies:
+```bash
+npm install
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+4. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Building for Production
 
-**Use GitHub Codespaces**
+To create a production build:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+npm run build
+```
 
-## What technologies are used for this project?
+To preview the production build:
 
-This project is built with:
+```bash
+npm run preview
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Project Structure
 
-## How can I deploy this project?
+```
+src/
+  components/        # Reusable React components
+  pages/            # Page components
+  styles/           # Global styles and Tailwind config
+  assets/           # Images, icons, and other static assets
+  utils/            # Utility functions and helpers
+```
 
-Simply open [Lovable](https://lovable.dev/projects/b8abf21f-3e54-4e5a-8352-9e6cd7c4a2f9) and click on Share -> Publish.
+## Contributing
 
-## Can I connect a custom domain to my Lovable project?
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Yes, you can!
+## Contact
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+For questions about this project or NexoLab services:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Email: hola@nexolab.com
+- Phone: +1 (555) 123-4567
+- Address: Av. Tecnología 123
+
+## License
+
+This project is proprietary software of NexoLab. All rights reserved.
