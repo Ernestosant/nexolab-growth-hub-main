@@ -33,17 +33,14 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Logo and Description */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600 rounded-lg flex items-center justify-center accent-glow">
-                <span className="text-white font-bold text-xl">N</span>
-              </div>
-              <span className="text-2xl font-bold">NexoLab</span>
+              <img 
+                src="/nexolab-logo-transparent.png" 
+                alt="NexoLab Logo" 
+                className="w-40 h-40 object-contain"
+              />
             </div>
-            <p className="text-nexo-blue-100 leading-relaxed">
-              Impulsamos el crecimiento de tu empresa con estrategias de marketing 
-              digital y tecnología innovadora.
-            </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
                 <a
