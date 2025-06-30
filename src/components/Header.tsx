@@ -34,12 +34,13 @@ const Header = ({ isDark, toggleTheme }: HeaderProps) => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass-card border-b">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2">
-          <div className="w-10 h-10 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-700 rounded-lg flex items-center justify-center accent-glow">
-            <span className="text-white font-bold text-xl">N</span>
-          </div>
-          <span className="text-2xl font-bold gradient-text">NexoLab</span>
+      <div className="container mx-auto px-3 h-16 flex items-center justify-between">
+        <Link to="/" className="flex items-center">
+          <img 
+            src="/logos/Horizontal_Orange and Black Partnership Investment Logo_20250629_205646_0003.png" 
+            alt="NexoLab Logo" 
+            className="h-36 w-auto object-contain"
+          />
         </Link>
 
         <div className="hidden md:flex items-center space-x-6">
