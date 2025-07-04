@@ -31,7 +31,7 @@ const ServicesSection = () => {
     },
     {
       icon: <Megaphone className="h-6 w-6" />,
-      title: 'Campañas Publicitarias',
+      title: 'Servicios de Marketing y Publicidad Digital',
       description: 'Campañas optimizadas en Google y Meta Ads que maximizan tu retorno de inversión.',
       features: ['Google Ads', 'Meta Ads', 'Optimización ROI']
     },

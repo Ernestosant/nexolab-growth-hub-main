@@ -87,8 +87,8 @@ const Services = () => {
     },
     {
       icon: <Megaphone className="h-8 w-8" />,
-      title: 'Campañas Publicitarias (Google, Meta Ads)',
-      description: 'Campañas publicitarias optimizadas que maximizan tu ROI mediante targeting preciso y optimización continua basada en datos.',
+      title: 'Servicios de Marketing y Publicidad Digital',
+      description: 'Estrategias de marketing digital y campañas publicitarias personalizadas diseñadas para alcanzar tus objetivos empresariales.',
       features: [
         'Google Ads (Search, Display, Shopping)',
         'Meta Ads (Facebook, Instagram)',

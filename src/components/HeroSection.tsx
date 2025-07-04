@@ -42,7 +42,7 @@ const HeroSection = () => {
               </h1>
               <div className="text-lg max-w-2xl mx-auto min-h-[3rem] flex items-center justify-center">
                 <TypewriterText
-                  text="Estrategias de marketing digital que generan resultados extraordinarios para tu empresa."
+                  text="No predecimos el futuro, lo creamos con IA"
                   speed={30}
                   delay={800}
                   className="text-lg"
