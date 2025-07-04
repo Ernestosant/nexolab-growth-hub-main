@@ -17,10 +17,12 @@ const Footer = () => {
       { name: 'Contacto', href: '#contact' }
     ],
     'Servicios': [
-      { name: 'Branding', href: '#' },
-      { name: 'Redes Sociales', href: '#' },
-      { name: 'Publicidad Digital', href: '#' },
-      { name: 'Diseño Web', href: '#' }
+      { name: "Desarrollo Web & Mobile", href: "/services" },
+      { name: "Desarrollo de Soluciones con IA", href: "/services" },
+      { name: "Automatización y CRM", href: "/services" },
+      { name: "Branding", href: "/services" },
+      { name: "Gestión de Redes Sociales", href: "/services" },
+      { name: "Marketing y Publicidad Digital", href: "/services" }
     ],
     'Contacto': [
       { name: 'hola@nexolab.com', href: 'mailto:hola@nexolab.com', icon: <Mail className="h-4 w-4" /> },
@@ -91,7 +93,7 @@ const Footer = () => {
         <div className="border-t border-nexo-blue-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-nexo-blue-300 text-sm">
-              © 2024 NexoLab. Todos los derechos reservados.
+              © 2025 NexoLab. Todos los derechos reservados.
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-nexo-blue-300 hover:text-white transition-colors">

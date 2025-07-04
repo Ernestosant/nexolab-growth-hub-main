@@ -34,25 +34,6 @@ const Services = () => {
 
   const services = [
     {
-      icon: <Brain className="h-8 w-8" />,
-      title: 'Desarrollo de Soluciones con IA',
-      description: 'Implementamos soluciones inteligentes de vanguardia que revolucionan procesos empresariales mediante tecnologías de Inteligencia Artificial de última generación, posicionando a tu empresa por delante de la competencia con innovación disruptiva.',
-      features: [
-        'Algoritmos de Machine Learning personalizados',
-        'Automatización inteligente de procesos',
-        'Análisis predictivo y Big Data',
-        'Chatbots y asistentes virtuales avanzados',
-        'Visión por computadora y NLP'
-      ],
-      examples: [
-        'Sistema predictivo que aumentó ventas en 400%',
-        'Chatbot IA que redujo costos de soporte en 60%',
-        'Automatización que optimizó procesos en 80%'
-      ],
-      price: 'Desde $5,000',
-      duration: '6-12 semanas'
-    },
-    {
       icon: <Globe className="h-8 w-8" />,
       title: 'Desarrollo Web & Mobile',
       description: 'Creamos aplicaciones web y móviles modernas, escalables y de alto rendimiento que transforman tu presencia digital y elevan la experiencia de usuario a niveles superiores.',
@@ -62,71 +43,19 @@ const Services = () => {
         'Arquitectura de backend escalable y segura',
         'APIs RESTful y GraphQL optimizadas',
         'Integración con servicios cloud y microservicios'
-      ],
-      examples: [
-        'App móvil con 1M+ descargas y 4.8 estrellas',
-        'E-commerce que aumentó conversiones en 300%',
-        'SaaS platform con 50K+ usuarios activos'
-      ],
-      price: 'Desde $3,500',
-      duration: '6-10 semanas'
+      ]
     },
     {
-      icon: <Palette className="h-8 w-8" />,
-      title: 'Branding',
-      description: 'Creamos identidades visuales únicas y memorables que conectan emocionalmente con tu audiencia objetivo, diferenciándote de la competencia.',
+      icon: <Brain className="h-8 w-8" />,
+      title: 'Desarrollo de Soluciones con IA',
+      description: 'Implementamos soluciones inteligentes de vanguardia que revolucionan procesos empresariales mediante tecnologías de Inteligencia Artificial de última generación, posicionando a tu empresa por delante de la competencia con innovación disruptiva.',
       features: [
-        'Diseño de logotipos profesionales',
-        'Manual de identidad corporativa',
-        'Paleta de colores estratégica',
-        'Tipografías corporativas',
-        'Aplicaciones de marca'
-      ],
-      examples: [
-        'Rediseño completo de marca para startup tecnológica',
-        'Identidad visual para cadena de restaurantes',
-        'Branding para consultoría de negocios'
-      ],
-      price: 'Desde $1,500',
-      duration: '2-4 semanas'
-    },
-    {
-      icon: <Share2 className="h-8 w-8" />,
-      title: 'Gestión de Redes Sociales',
-      description: 'Gestión integral de tus perfiles sociales con estrategias de contenido que generan engagement auténtico y conversiones medibles.',
-      features: [
-        'Estrategia de contenido personalizada',
-        'Creación de posts y stories',
-        'Community management profesional',
-        'Análisis de métricas y KPIs',
-        'Gestión de campañas orgánicas'
-      ],
-      examples: [
-        'Crecimiento del 300% en engagement para marca de moda',
-        'Gestión integral para clínica dental',
-        'Estrategia social para e-commerce'
-      ],
-      price: 'Desde $800/mes',
-      duration: 'Servicio mensual'
-    },
-    {
-      icon: <Megaphone className="h-8 w-8" />,
-      title: 'Servicios de Marketing y Publicidad Digital',
-      description: 'Estrategias de marketing digital y campañas publicitarias personalizadas diseñadas para alcanzar tus objetivos empresariales.',
-      features: [
-        'Google Ads (Search, Display, Shopping)',
-        'Meta Ads (Facebook, Instagram)',
-        'Segmentación avanzada de audiencias',
-        'Optimización de conversiones',
-        'Reportes detallados de performance'
-      ],
-      examples: [
-        'ROI del 400% en campaña para SaaS',
-        'Reducción del 50% en costo por adquisición',
-        'Aumento del 250% en ventas online'
-      ],
-      price: 'Desde $1,200/mes + ad spend',
-      duration: 'Campañas continuas'
+        'Algoritmos de Machine Learning personalizados',
+        'Automatización inteligente de procesos',
+        'Análisis predictivo y Big Data',
+        'Chatbots y asistentes virtuales avanzados',
+        'Visión por computadora y NLP'
+      ]
     },
     {
       icon: <Settings className="h-8 w-8" />,
@@ -138,14 +67,43 @@ const Services = () => {
         'Lead scoring y nurturing',
         'Integración de herramientas',
         'Reportes y análisis avanzados'
-      ],
-      examples: [
-        'Automatización que generó 40% más leads',
-        'CRM personalizado para inmobiliaria',
-        'Sistema de nurturing para consultora'
-      ],
-      price: 'Desde $2,000',
-      duration: '3-6 semanas'
+      ]
+    },
+    {
+      icon: <Palette className="h-8 w-8" />,
+      title: 'Branding',
+      description: 'Creamos identidades visuales únicas y memorables que conectan emocionalmente con tu audiencia objetivo, diferenciándote de la competencia.',
+      features: [
+        'Diseño de logotipos profesionales',
+        'Manual de identidad corporativa',
+        'Paleta de colores estratégica',
+        'Tipografías corporativas',
+        'Aplicaciones de marca'
+      ]
+    },
+    {
+      icon: <Share2 className="h-8 w-8" />,
+      title: 'Gestión de Redes Sociales',
+      description: 'Gestión integral de tus perfiles sociales con estrategias de contenido que generan engagement auténtico y conversiones medibles.',
+      features: [
+        'Estrategia de contenido personalizada',
+        'Creación de posts y stories',
+        'Community management profesional',
+        'Análisis de métricas y KPIs',
+        'Gestión de campañas orgánicas'
+      ]
+    },
+    {
+      icon: <Megaphone className="h-8 w-8" />,
+      title: 'Servicios de Marketing y Publicidad Digital',
+      description: 'Estrategias de marketing digital y campañas publicitarias personalizadas diseñadas para alcanzar tus objetivos empresariales.',
+      features: [
+        'Google Ads (Search, Display, Shopping)',
+        'Meta Ads (Facebook, Instagram)',
+        'Segmentación avanzada de audiencias',
+        'Optimización de conversiones',
+        'Reportes detallados de performance'
+      ]
     }
   ];
 
@@ -173,84 +131,83 @@ const Services = () => {
         {/* Services Detail Section */}
         <section className="py-16 bg-transparent">
           <div className="container mx-auto px-4">
-            <div className="space-y-16">
-              {services.map((service, index) => (
-                <Card 
-                  key={index}
-                  className={`glass-card card-enhanced p-8 hover:scale-[1.02] transition-all duration-300 group border-0 ${
-                    index === 0 ? 'service-card-featured ring-2 ring-nexo-orange-500/40 shadow-2xl' : ''
-                  }`}
-                >
-                  <div className="grid lg:grid-cols-2 gap-8 items-start">
-                    {/* Service Info */}
-                    <div className="space-y-6">
-                      <div className="flex items-center space-x-4">
-                        <div className={`p-3 rounded-xl text-white accent-glow ${
-                          index === 0 
-                            ? 'bg-gradient-to-br from-nexo-orange-500 to-red-600 shadow-lg' 
-                            : 'bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600'
-                        }`}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Columna izquierda */}
+              <div className="grid auto-rows-fr gap-8">
+                {[services[0], services[1], services[2]].map((service, index) => (
+                  <Card
+                    key={service.title}
+                    className="glass-card card-enhanced p-6 hover:scale-[1.02] transition-all duration-300 group border-0 h-[400px]"
+                  >
+                    <div className="flex flex-col h-full">
+                      <div className="flex items-center space-x-4 flex-shrink-0 mb-4">
+                        <div className="p-2.5 rounded-xl text-white accent-glow bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600">
                           {service.icon}
                         </div>
                         <div>
-                          <h2 className={`text-2xl font-bold ${
-                            index === 0 ? 'text-nexo-orange-600' : 'text-foreground'
-                          }`}>
+                          <h2 className="text-xl font-bold text-foreground">
                             {service.title}
                           </h2>
-                          <div className="flex items-center space-x-4 mt-2">
-                            <Badge variant="outline" className={`${
-                              index === 0 
-                                ? 'text-nexo-orange-600 border-nexo-orange-600 font-semibold' 
-                                : 'text-nexo-orange-500 border-nexo-orange-500'
-                            }`}>
-                              {service.price}
-                            </Badge>
-                            <Badge variant="outline" className="text-nexo-blue-600 border-nexo-blue-600">
-                              {service.duration}
-                            </Badge>
-                          </div>
                         </div>
                       </div>
-                      
-                      <p className="text-muted-foreground leading-relaxed">
-                        {service.description}
-                      </p>
-                      
-                      <div>
-                        <h3 className="font-semibold mb-3 text-foreground">Incluye:</h3>
-                        <ul className="space-y-2">
-                          {service.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-center space-x-2">
-                              <CheckCircle className={`h-4 w-4 flex-shrink-0 ${
-                                index === 0 ? 'text-nexo-orange-600' : 'text-nexo-orange-500'
-                              }`} />
-                              <span className="text-sm text-muted-foreground">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-
-                    {/* Examples */}
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="font-semibold mb-4 text-foreground">Casos de Éxito:</h3>
-                        <div className="space-y-3">
-                          {service.examples.map((example, idx) => (
-                            <div key={idx} className="p-4 bg-background/30 rounded-lg border border-border/50">
-                              <div className="flex items-start space-x-3">
-                                <ArrowRight className="h-4 w-4 text-nexo-blue-600 mt-0.5 flex-shrink-0" />
-                                <p className="text-sm text-muted-foreground">{example}</p>
-                              </div>
-                            </div>
-                          ))}
+                      <div className="flex-1 overflow-y-auto custom-scrollbar">
+                        <p className="text-muted-foreground leading-relaxed text-sm mb-4">
+                          {service.description}
+                        </p>
+                        <div>
+                          <h3 className="font-semibold mb-2 text-foreground">Incluye:</h3>
+                          <ul className="space-y-1.5">
+                            {service.features.map((feature, idx) => (
+                              <li key={idx} className="flex items-center space-x-2">
+                                <CheckCircle className="h-4 w-4 flex-shrink-0 text-nexo-orange-500" />
+                                <span className="text-sm text-muted-foreground">{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </Card>
-              ))}
+                  </Card>
+                ))}
+              </div>
+              {/* Columna derecha */}
+              <div className="grid auto-rows-fr gap-8">
+                {[services[3], services[4], services[5]].map((service, index) => (
+                  <Card
+                    key={service.title}
+                    className="glass-card card-enhanced p-6 hover:scale-[1.02] transition-all duration-300 group border-0 h-[400px]"
+                  >
+                    <div className="flex flex-col h-full">
+                      <div className="flex items-center space-x-4 flex-shrink-0 mb-4">
+                        <div className="p-2.5 rounded-xl text-white accent-glow bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600">
+                          {service.icon}
+                        </div>
+                        <div>
+                          <h2 className="text-xl font-bold text-foreground">
+                            {service.title}
+                          </h2>
+                        </div>
+                      </div>
+                      <div className="flex-1 overflow-y-auto custom-scrollbar">
+                        <p className="text-muted-foreground leading-relaxed text-sm mb-4">
+                          {service.description}
+                        </p>
+                        <div>
+                          <h3 className="font-semibold mb-2 text-foreground">Incluye:</h3>
+                          <ul className="space-y-1.5">
+                            {service.features.map((feature, idx) => (
+                              <li key={idx} className="flex items-center space-x-2">
+                                <CheckCircle className="h-4 w-4 flex-shrink-0 text-nexo-orange-500" />
+                                <span className="text-sm text-muted-foreground">{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -270,7 +227,8 @@ const Services = () => {
                 <Button 
                   variant="outline"
                   size="lg"
-                  className="border-white text-white hover:bg-white hover:text-nexo-blue-700 px-8 py-4 rounded-full font-semibold"
+                  className="border-white text-white dark:text-white bg-nexo-blue-700/90 hover:bg-white hover:text-nexo-blue-700 px-8 py-4 rounded-full font-semibold transition-colors duration-200"
+                  style={{ color: 'inherit' }}
                   onClick={() => window.location.href = '/#contact'}
                 >
                   Agendar Reunión
@@ -286,4 +244,4 @@ const Services = () => {
   );
 };
 
-export default Services; 
+export default Services;
