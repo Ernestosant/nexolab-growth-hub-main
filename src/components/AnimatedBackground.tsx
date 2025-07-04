@@ -6,7 +6,11 @@ interface AnimatedBackgroundProps {
 }
 
 const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({ isDark = false }) => {
-  return <ParticleBackground isDark={isDark} />;
+  return (
+    <div className="fixed inset-0 z-0" style={{ opacity: 0.6 }}>
+      <ParticleBackground isDark={isDark} />
+    </div>
+  );
 };
 
-export default AnimatedBackground; 
+export default AnimatedBackground;
