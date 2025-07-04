@@ -1,5 +1,12 @@
 import React from 'react';
-import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+
+// X (Twitter) SVG icon as a React component
+const XIcon = ({ className = "" }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 509.64" className={className} fill="currentColor">
+    <path fill="#fff" fillRule="nonzero" d="M323.74 148.35h36.12l-78.91 90.2 92.83 122.73h-72.69l-56.93-74.43-65.15 74.43h-36.14l84.4-96.47-89.05-116.46h74.53l51.46 68.04 59.53-68.04zm-12.68 191.31h20.02l-129.2-170.82H180.4l130.66 170.82z"/>
+  </svg>
+);
 
 const Footer = () => {
   const footerLinks = {
@@ -25,7 +32,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: <Facebook className="h-5 w-5" />, name: 'Facebook', url: '#' },
     { icon: <Instagram className="h-5 w-5" />, name: 'Instagram', url: '#' },
-    { icon: <Linkedin className="h-5 w-5" />, name: 'LinkedIn', url: '#' }
+    { icon: <XIcon className="h-5 w-5" />, name: 'X', url: '#' }
   ];
 
   return (
