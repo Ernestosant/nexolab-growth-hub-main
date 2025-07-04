@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AnimatedBackground from '@/components/AnimatedBackground';
@@ -8,6 +8,30 @@ import { Badge } from "@/components/ui/badge";
 import { Brain, Globe, Palette, Share2, Megaphone, Settings, CheckCircle, ArrowRight } from 'lucide-react';
 
 const Services = () => {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    // Check for saved theme preference or default to light mode
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      setIsDark(true);
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = !isDark;
+    setIsDark(newTheme);
+    if (newTheme) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  };
+
   const services = [
     {
       icon: <Brain className="h-8 w-8" />,
@@ -127,9 +151,9 @@ const Services = () => {
 
   return (
     <div className="min-h-screen text-foreground relative overflow-hidden">
-      <AnimatedBackground />
+      <AnimatedBackground isDark={isDark} />
       <div className="relative z-10">
-        <Header isDark={false} toggleTheme={() => {}} />
+        <Header isDark={isDark} toggleTheme={toggleTheme} />
         
         {/* Hero Section */}
         <section className="pt-24 pb-16 hero-gradient">
