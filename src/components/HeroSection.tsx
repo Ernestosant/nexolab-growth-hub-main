@@ -72,14 +72,17 @@ const HeroSection = () => {
           {/* Robot/Logo pointing to objectives */}
           <div className="relative w-full max-w-5xl">
             {/* Animated Logo in center */}
-            <div className="flex justify-center mb-6">
-              <div className="relative">
+            <div className="flex justify-center">
+              <div className="relative flex flex-col items-center">
                 <div className="w-40 h-40 flex items-center justify-center animate-bounce">
                   <img 
                     src="/Vertical_Orange and Black Partnership Investment Logo_without_bakg_20250629_205645_0001.png" 
                     alt="NexoLab Logo" 
                     className="w-full h-full object-contain"
                   />
+                </div>
+                <div className="-mt-8 mb-2 text-2xl lg:text-4xl font-semibold text-nexo-orange-500 text-center animate-fade-in z-10 relative">
+                  ¿Qué esperar de nosotros?
                 </div>
                 <ArrowDown className="h-6 w-6 text-nexo-orange-500 mx-auto mt-2 animate-pulse" />
               </div>
