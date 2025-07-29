@@ -1,3 +1,11 @@
+body {
+  background-image: url('/kkroto66.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .glass-card {
   background: rgba(255, 255, 255, 0.05) !important;
   backdrop-filter: blur(10px) !important;
