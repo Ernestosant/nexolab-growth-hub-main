@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 
 // X (Twitter) SVG icon as a React component
@@ -93,15 +94,15 @@ const Footer = () => {
         <div className="border-t border-nexo-blue-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-nexo-blue-300 text-sm">
-              © 2025 NexoLab. Todos los derechos reservados.
+              © {new Date().getFullYear()} NexoLab. Todos los derechos reservados.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-nexo-blue-300 hover:text-white transition-colors">
+              <Link to="/privacy-policy" className="text-nexo-blue-300 hover:text-white transition-colors">
                 Política de Privacidad
-              </a>
-              <a href="#" className="text-nexo-blue-300 hover:text-white transition-colors">
+              </Link>
+              <Link to="/terms" className="text-nexo-blue-300 hover:text-white transition-colors">
                 Términos de Servicio
-              </a>
+              </Link>
             </div>
           </div>
         </div>

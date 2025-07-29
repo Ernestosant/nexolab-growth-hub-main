@@ -28,9 +28,9 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen hero-gradient pt-20 pb-8">
+    <section id="home" className="min-h-screen pt-20 pb-8">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center space-y-8 min-h-[90vh] justify-center">
+        <div className="flex flex-col items-center space-y-8 min-h-[90vh] justify-center rounded-lg">
           
           {/* Hero Content - More compact */}
           <div className="text-center space-y-6 animate-slide-in-left max-w-4xl">

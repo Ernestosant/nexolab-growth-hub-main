@@ -118,7 +118,7 @@ const Services = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                ¿Qué <span className="gradient-text">hacemos?</span>
+                ¿Qué <span className="gradient-text">ofrecemos?</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
                 Servicios especializados en marketing digital y tecnología que impulsan 
