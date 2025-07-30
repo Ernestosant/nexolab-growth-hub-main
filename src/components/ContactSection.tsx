@@ -5,11 +5,19 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from 'lucide-react';
 
+// Define interfaces for typing
+interface SocialLink {
+  icon: React.ReactNode;
+  name: string;
+  url: string;
+  className?: string;
+}
+
 // X (Twitter) SVG icon as a React component
 const XIcon = ({ className = "" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 509.64" className={className} fill="currentColor">
     <rect width="512" height="509.64" rx="115.61" ry="115.61" />
-    <path fill="#fff" fillRule="nonzero" d="M323.74 148.35h36.12l-78.91 90.2 92.83 122.73h-72.69l-56.93-74.43-65.15 74.43h-36.14l84.4-96.47-89.05-116.46h74.53l51.46 68.04 59.53-68.04zm-12.68 191.31h20.02l-129.2-170.82H180.4l130.66 170.82z"/>
+    <path fill="currentColor" fillRule="nonzero" d="M323.74 148.35h36.12l-78.91 90.2 92.83 122.73h-72.69l-56.93-74.43-65.15 74.43h-36.14l84.4-96.47-89.05-116.46h74.53l51.46 68.04 59.53-68.04zm-12.68 191.31h20.02l-129.2-170.82H180.4l130.66 170.82z"/>
   </svg>
 );
 
@@ -37,10 +45,10 @@ const ContactSection = () => {
     }
   ];
 
-  const socialLinks = [
+  const socialLinks: SocialLink[] = [
     { icon: <Facebook className="h-5 w-5" />, name: 'Facebook', url: '#' },
     { icon: <Instagram className="h-5 w-5" />, name: 'Instagram', url: '#' },
-    { icon: <XIcon className="h-5 w-5" />, name: 'X', url: '#' }
+    { icon: <XIcon className="h-5 w-5" />, name: 'X', url: '#', className: 'x-social-icon' }
   ];
 
   return (
@@ -70,7 +78,7 @@ const ContactSection = () => {
                       <h3 className="font-semibold mb-1 group-hover:text-nexo-orange-500 transition-colors">
                         {info.title}
                       </h3>
-                      <p className="text-muted-foreground text-sm">
+                      <p className="text-muted-foreground text-sm text-enhanced-contrast">
                         {info.content}
                       </p>
                     </div>
@@ -89,7 +97,7 @@ const ContactSection = () => {
                     href={social.url}
                     className="p-3 glass-card card-enhanced rounded-lg hover:scale-110 transition-all group border-0"
                   >
-                    <div className="text-nexo-orange-500 group-hover:text-nexo-blue-600 transition-colors">
+                    <div className={social.className || "text-nexo-orange-500 group-hover:text-nexo-blue-600 transition-colors"}>
                       {social.icon}
                     </div>
                   </a>

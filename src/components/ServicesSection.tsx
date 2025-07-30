@@ -70,7 +70,7 @@ const ServicesSection = () => {
                     {service.title}
                   </h3>
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-sm leading-relaxed text-enhanced-contrast">
                   {service.description}
                 </p>
                 <Button 
