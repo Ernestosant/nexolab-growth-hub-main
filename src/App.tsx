@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
+import "./app/card-text.css"; // Importamos los estilos de texto mejorados para las tarjetas
 
 const queryClient = new QueryClient();
 

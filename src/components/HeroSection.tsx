@@ -107,7 +107,7 @@ const HeroSection = () => {
                       <h3 className="font-bold text-base mb-1 group-hover:text-nexo-orange-500 transition-colors">
                         {objective.title}
                       </h3>
-                      <p className="text-muted-foreground text-sm">
+                      <p className="text-muted-foreground text-sm text-enhanced-contrast">
                         {objective.description}
                       </p>
                     </div>

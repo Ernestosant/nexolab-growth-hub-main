@@ -120,7 +120,7 @@ const Services = () => {
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
                 ¿Qué <span className="gradient-text">ofrecemos?</span>
               </h1>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-xl text-muted-foreground mb-8 text-enhanced-contrast">
                 Servicios especializados en marketing digital y tecnología que impulsan 
                 el crecimiento sostenible de tu negocio
               </p>

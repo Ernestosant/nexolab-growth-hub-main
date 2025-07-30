@@ -70,7 +70,7 @@ const ContactSection = () => {
                       <h3 className="font-semibold mb-1 group-hover:text-nexo-orange-500 transition-colors">
                         {info.title}
                       </h3>
-                      <p className="text-muted-foreground text-sm">
+                      <p className="text-muted-foreground text-sm text-enhanced-contrast">
                         {info.content}
                       </p>
                     </div>
