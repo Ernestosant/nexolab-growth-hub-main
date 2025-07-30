@@ -97,9 +97,9 @@ const Footer = () => {
               © {new Date().getFullYear()} NexoLab. Todos los derechos reservados.
             </div>
             <div className="flex space-x-6 text-sm">
-              <Link to="/privacy-policy" className="text-nexo-blue-300 hover:text-white transition-colors">
+              <a href="/politicas_de_privacidad.pdf" className="text-nexo-blue-300 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                 Política de Privacidad
-              </Link>
+              </a>
               <a href="/terminos_y_condiciones.pdf" className="text-nexo-blue-300 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                 Términos de Servicio
               </a>

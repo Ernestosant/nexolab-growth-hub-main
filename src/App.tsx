@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
-import PrivacyPolicy from "@/pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -19,7 +18,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/privacy-policy" element={<Navigate to="/politicas_de_privacidad.pdf" />} />
           <Route path="/terms" element={<Navigate to="/terminos_y_condiciones.pdf" />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
