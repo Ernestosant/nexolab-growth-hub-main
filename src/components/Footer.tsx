@@ -100,9 +100,9 @@ const Footer = () => {
               <Link to="/privacy-policy" className="text-nexo-blue-300 hover:text-white transition-colors">
                 Política de Privacidad
               </Link>
-              <Link to="/terms" className="text-nexo-blue-300 hover:text-white transition-colors">
+              <a href="/terminos_y_condiciones.pdf" className="text-nexo-blue-300 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                 Términos de Servicio
-              </Link>
+              </a>
             </div>
           </div>
         </div>
