@@ -62,7 +62,7 @@ const HeroSection = () => {
                 variant="outline" 
                 size="lg"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-4 text-base rounded-full border-2"
+                className="px-8 py-4 text-base rounded-full border-2 text-primary dark:text-white"
               >
                 Contacto
               </Button>
