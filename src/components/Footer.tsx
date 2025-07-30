@@ -46,7 +46,7 @@ const Footer = () => {
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
               <img 
-                src="/nexolab-logo-transparent.png" 
+                src="/logothot_2.png" 
                 alt="NexoLab Logo" 
                 className="w-40 h-40 object-contain"
               />
