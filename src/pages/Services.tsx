@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AnimatedBackground from '@/components/AnimatedBackground';
@@ -11,6 +11,7 @@ import { Brain, Globe, Palette, Share2, Megaphone, Settings, CheckCircle, ArrowR
 const Services = () => {
   const [isDark, setIsDark] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Check for saved theme preference or default to light mode
@@ -45,6 +46,10 @@ const Services = () => {
       document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     }
+  };
+
+  const handleContactNavigation = () => {
+    navigate('/#contact');
   };
 
   const services = [
@@ -252,7 +257,7 @@ const Services = () => {
                   size="lg"
                   className="border-white text-white dark:text-white bg-nexo-blue-700/90 hover:bg-white hover:text-nexo-blue-700 px-8 py-4 rounded-full font-semibold transition-colors duration-200"
                   style={{ color: 'inherit' }}
-                  onClick={() => window.location.href = '/#contact'}
+                  onClick={handleContactNavigation}
                 >
                   Agendar Reunión
                 </Button>
