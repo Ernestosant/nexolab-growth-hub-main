@@ -9,6 +9,13 @@ const XIcon = ({ className = "" }) => (
   </svg>
 );
 
+// Telegram SVG icon as a React component
+const TelegramIcon = ({ className = "" }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className={className} fill="currentColor">
+    <path d="M12 0C5.374 0 0 5.374 0 12s5.374 12 12 12 12-5.374 12-12S18.626 0 12 0zm5.568 8.16l-1.704 8.04c-.128.6-.464.744-.944.464l-2.6-1.92-1.256 1.208c-.136.136-.256.256-.528.256l.192-2.72L17.736 7.2c.224-.2-.048-.312-.352-.112l-6.464 4.072-2.784-.864c-.608-.192-.616-.608.128-.896l10.88-4.208c.504-.184.944.112.784.896z"/>
+  </svg>
+);
+
 const Footer = () => {
   const navigate = useNavigate();
   const footerLinks = {
@@ -45,9 +52,10 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: <Facebook className="h-5 w-5" />, name: 'Facebook', url: '#' },
-    { icon: <Instagram className="h-5 w-5" />, name: 'Instagram', url: '#' },
-    { icon: <XIcon className="h-5 w-5" />, name: 'X', url: '#' }
+    { icon: <Facebook className="h-5 w-5" />, name: 'Facebook', url: 'https://www.facebook.com/share/1HmZS8mA1x/' },
+    { icon: <Instagram className="h-5 w-5" />, name: 'Instagram', url: 'https://www.instagram.com/techlabas_ai_agency' },
+    { icon: <XIcon className="h-5 w-5" />, name: 'X', url: 'https://x.com/ThotLabsAi?s=08' },
+    { icon: <TelegramIcon className="h-5 w-5" />, name: 'Telegram', url: 'https://t.me/thotlabsAI_redcolaborativadeIA' }
   ];
 
   return (
@@ -68,6 +76,8 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-2 bg-nexo-blue-800 rounded-lg hover:bg-nexo-orange-500 transition-colors group"
                   title={social.name}
                 >
