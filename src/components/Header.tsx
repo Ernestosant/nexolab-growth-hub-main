@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Sun, Moon } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 interface HeaderProps {
   isDark: boolean;
@@ -12,6 +12,7 @@ interface HeaderProps {
 const Header = ({ isDark, toggleTheme }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const menuItems = [
     { name: 'Inicio', href: '/', type: 'route' },
@@ -20,6 +21,19 @@ const Header = ({ isDark, toggleTheme }: HeaderProps) => {
     { name: 'Contacto', href: '/#contact', type: 'scroll' }
   ];
 
+  // Handle navigation to sections with hash when arriving from another page
+  useEffect(() => {
+    if (location.pathname === '/' && location.hash) {
+      const sectionId = location.hash.substring(1);
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [location]);
+
   const handleNavClick = (item: typeof menuItems[0]) => {
     if (item.type === 'scroll' && location.pathname === '/') {
       // If we're on home page, scroll to section
@@ -27,7 +41,7 @@ const Header = ({ isDark, toggleTheme }: HeaderProps) => {
       document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
     } else if (item.type === 'scroll') {
       // If we're not on home page, navigate to home with hash
-      window.location.href = item.href;
+      navigate(item.href);
     }
     setIsOpen(false);
   };
