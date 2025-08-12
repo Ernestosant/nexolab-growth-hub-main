@@ -17,7 +17,6 @@ const Header = ({ isDark, toggleTheme }: HeaderProps) => {
   const menuItems = [
     { name: 'Inicio', href: '/', type: 'route' },
     { name: 'Servicios', href: '/services', type: 'route' },
-    { name: 'Testimonios', href: '/#testimonials', type: 'scroll' },
     { name: 'Contacto', href: '/#contact', type: 'scroll' }
   ];
 

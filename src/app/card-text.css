@@ -1,7 +1,6 @@
 /* Regla para mejorar el contraste del texto en las tarjetas en modo oscuro */
 .dark .card-enhanced p,
 .dark .glass-card p,
-.dark .testimonial-card-enhanced p,
 .dark .service-card-featured p {
   color: rgba(255, 255, 255, 0.95) !important;
 }

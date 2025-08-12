@@ -15,7 +15,6 @@ const Footer = () => {
     'Navegación': [
       { name: 'Inicio', href: '#home', type: 'scroll' },
       { name: 'Servicios', href: '#services', type: 'scroll' },
-      { name: 'Testimonios', href: '#testimonials', type: 'scroll' },
       { name: 'Contacto', href: '#contact', type: 'scroll' }
     ],
     'Servicios': [
