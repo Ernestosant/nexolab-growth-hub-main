@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 
 // X (Twitter) SVG icon as a React component
@@ -10,26 +10,39 @@ const XIcon = ({ className = "" }) => (
 );
 
 const Footer = () => {
+  const navigate = useNavigate();
   const footerLinks = {
     'Navegación': [
-      { name: 'Inicio', href: '#home' },
-      { name: 'Servicios', href: '#services' },
-      { name: 'Testimonios', href: '#testimonials' },
-      { name: 'Contacto', href: '#contact' }
+      { name: 'Inicio', href: '#home', type: 'scroll' },
+      { name: 'Servicios', href: '#services', type: 'scroll' },
+      { name: 'Testimonios', href: '#testimonials', type: 'scroll' },
+      { name: 'Contacto', href: '#contact', type: 'scroll' }
     ],
     'Servicios': [
-      { name: "Desarrollo Web & Mobile", href: "/services" },
-      { name: "Desarrollo de Soluciones con IA", href: "/services" },
-      { name: "Automatización y CRM", href: "/services" },
-      { name: "Branding", href: "/services" },
-      { name: "Gestión de Redes Sociales", href: "/services" },
-      { name: "Marketing y Publicidad Digital", href: "/services" }
+      { name: "Desarrollo Web & Mobile", href: "/services#desarrollo-web-mobile", type: 'route' },
+      { name: "Desarrollo de Soluciones con IA", href: "/services#desarrollo-soluciones-ia", type: 'route' },
+      { name: "Automatización y CRM", href: "/services#automatizacion-crm", type: 'route' },
+      { name: "Branding", href: "/services#branding", type: 'route' },
+      { name: "Gestión de Redes Sociales", href: "/services#gestion-redes-sociales", type: 'route' },
+      { name: "Marketing y Publicidad Digital", href: "/services#marketing-publicidad-digital", type: 'route' }
     ],
     'Contacto': [
-      { name: 'hola@nexolab.com', href: 'mailto:hola@nexolab.com', icon: <Mail className="h-4 w-4" /> },
-      { name: '+1 (555) 123-4567', href: 'tel:+15551234567', icon: <Phone className="h-4 w-4" /> },
-      { name: 'Av. Tecnología 123', href: '#', icon: <MapPin className="h-4 w-4" /> }
+      { name: 'hola@nexolab.com', href: 'mailto:hola@nexolab.com', icon: <Mail className="h-4 w-4" />, type: 'external' },
+      { name: '+1 (555) 123-4567', href: 'tel:+15551234567', icon: <Phone className="h-4 w-4" />, type: 'external' },
+      { name: 'Av. Tecnología 123', href: '#', icon: <MapPin className="h-4 w-4" />, type: 'external' }
     ]
+  };
+
+  const handleLinkClick = (link: { href: string; type: string }) => {
+    if (link.type === 'route') {
+      navigate(link.href);
+    } else if (link.type === 'scroll') {
+      const sectionId = link.href.substring(1);
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   const socialLinks = [
@@ -76,13 +89,23 @@ const Footer = () => {
               <ul className="space-y-3">
                 {links.map((link, index) => (
                   <li key={index}>
-                    <a
-                      href={link.href}
-                      className="text-nexo-blue-200 hover:text-white transition-colors flex items-center space-x-2"
-                    >
-                      {link.icon && <span>{link.icon}</span>}
-                      <span>{link.name}</span>
-                    </a>
+                    {link.type === 'external' ? (
+                      <a
+                        href={link.href}
+                        className="text-nexo-blue-200 hover:text-white transition-colors flex items-center space-x-2"
+                      >
+                        {link.icon && <span>{link.icon}</span>}
+                        <span>{link.name}</span>
+                      </a>
+                    ) : (
+                      <button
+                        onClick={() => handleLinkClick(link)}
+                        className="text-nexo-blue-200 hover:text-white transition-colors flex items-center space-x-2 text-left"
+                      >
+                        {link.icon && <span>{link.icon}</span>}
+                        <span>{link.name}</span>
+                      </button>
+                    )}
                   </li>
                 ))}
               </ul>

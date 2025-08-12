@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AnimatedBackground from '@/components/AnimatedBackground';
@@ -9,6 +10,7 @@ import { Brain, Globe, Palette, Share2, Megaphone, Settings, CheckCircle, ArrowR
 
 const Services = () => {
   const [isDark, setIsDark] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     // Check for saved theme preference or default to light mode
@@ -19,6 +21,19 @@ const Services = () => {
       document.documentElement.classList.add('dark');
     }
   }, []);
+
+  // Handle navigation to specific service cards with hash
+  useEffect(() => {
+    if (location.hash) {
+      const sectionId = location.hash.substring(1);
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 300); // Delay to ensure the page is fully loaded
+    }
+  }, [location]);
 
   const toggleTheme = () => {
     const newTheme = !isDark;
@@ -34,6 +49,7 @@ const Services = () => {
 
   const services = [
     {
+      id: 'desarrollo-web-mobile',
       icon: <Globe className="h-8 w-8" />,
       title: 'Desarrollo Web & Mobile',
       description: 'Creamos aplicaciones web y móviles modernas, escalables y de alto rendimiento que transforman tu presencia digital y elevan la experiencia de usuario a niveles superiores.',
@@ -46,6 +62,7 @@ const Services = () => {
       ]
     },
     {
+      id: 'desarrollo-soluciones-ia',
       icon: <Brain className="h-8 w-8" />,
       title: 'Desarrollo de Soluciones con IA',
       description: 'Implementamos soluciones inteligentes de vanguardia que revolucionan procesos empresariales mediante tecnologías de Inteligencia Artificial de última generación, posicionando a tu empresa por delante de la competencia con innovación disruptiva.',
@@ -58,6 +75,7 @@ const Services = () => {
       ]
     },
     {
+      id: 'automatizacion-crm',
       icon: <Settings className="h-8 w-8" />,
       title: 'Automatización y CRM',
       description: 'Sistemas automatizados que optimizan tus procesos de ventas y marketing, mejorando la experiencia del cliente y tu eficiencia operativa.',
@@ -70,6 +88,7 @@ const Services = () => {
       ]
     },
     {
+      id: 'branding',
       icon: <Palette className="h-8 w-8" />,
       title: 'Branding',
       description: 'Creamos identidades visuales únicas y memorables que conectan emocionalmente con tu audiencia objetivo, diferenciándote de la competencia.',
@@ -82,6 +101,7 @@ const Services = () => {
       ]
     },
     {
+      id: 'gestion-redes-sociales',
       icon: <Share2 className="h-8 w-8" />,
       title: 'Gestión de Redes Sociales',
       description: 'Gestión integral de tus perfiles sociales con estrategias de contenido que generan engagement auténtico y conversiones medibles.',
@@ -94,6 +114,7 @@ const Services = () => {
       ]
     },
     {
+      id: 'marketing-publicidad-digital',
       icon: <Megaphone className="h-8 w-8" />,
       title: 'Servicios de Marketing y Publicidad Digital',
       description: 'Estrategias de marketing digital y campañas publicitarias personalizadas diseñadas para alcanzar tus objetivos empresariales.',
@@ -137,6 +158,7 @@ const Services = () => {
                 {[services[0], services[1], services[2]].map((service, index) => (
                   <Card
                     key={service.title}
+                    id={service.id}
                     className="glass-card card-enhanced p-6 hover:scale-[1.02] transition-all duration-300 group border-0 h-[400px]"
                   >
                     <div className="flex flex-col h-full">
@@ -175,6 +197,7 @@ const Services = () => {
                 {[services[3], services[4], services[5]].map((service, index) => (
                   <Card
                     key={service.title}
+                    id={service.id}
                     className="glass-card card-enhanced p-6 hover:scale-[1.02] transition-all duration-300 group border-0 h-[400px]"
                   >
                     <div className="flex flex-col h-full">
