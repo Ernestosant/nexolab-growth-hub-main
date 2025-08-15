@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import AnimatedBackground from '@/components/AnimatedBackground';
@@ -42,7 +41,6 @@ const Index = () => {
         <HeroSection />
         <div className="space-y-0">
           <ServicesSection />
-          <TestimonialsSection />
         </div>
         <ContactSection />
         <Footer />

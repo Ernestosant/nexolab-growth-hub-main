@@ -1,47 +1,59 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Brain, Globe, Palette, Share2, Megaphone, Settings } from 'lucide-react';
 
 const ServicesSection = () => {
+  const navigate = useNavigate();
   const services = [
     {
+      id: 'desarrollo-soluciones-ia',
       icon: <Brain className="h-6 w-6" />,
       title: 'Desarrollo de Soluciones con IA',
       description: 'Implementamos soluciones inteligentes de vanguardia que revolucionan tu negocio con tecnología de IA de última generación, posicionándote por delante de la competencia.',
       features: ['Machine Learning avanzado', 'Automatización inteligente', 'Análisis predictivo']
     },
     {
+      id: 'desarrollo-web-mobile',
       icon: <Globe className="h-6 w-6" />,
       title: 'Desarrollo Web & Mobile',
       description: 'Aplicaciones web y móviles modernas, escalables y optimizadas que transforman tu presencia digital y mejoran la experiencia de tus usuarios.',
       features: ['Apps multiplataforma', 'Progressive Web Apps', 'Backend robusto']
     },
     {
+      id: 'branding',
       icon: <Palette className="h-6 w-6" />,
       title: 'Branding',
       description: 'Identidades visuales únicas que conectan con tu audiencia y fortalecen tu presencia.',
       features: ['Diseño de logos', 'Manual de marca', 'Identidad visual']
     },
     {
+      id: 'gestion-redes-sociales',
       icon: <Share2 className="h-6 w-6" />,
       title: 'Gestión de Redes Sociales',
       description: 'Gestión integral con contenido estratégico que genera engagement y conversiones.',
       features: ['Gestión de contenido', 'Community management', 'Estrategia social']
     },
     {
+      id: 'marketing-publicidad-digital',
       icon: <Megaphone className="h-6 w-6" />,
       title: 'Servicios de Marketing y Publicidad Digital',
       description: 'Campañas optimizadas en Google y Meta Ads que maximizan tu retorno de inversión.',
       features: ['Google Ads', 'Meta Ads', 'Optimización ROI']
     },
     {
+      id: 'automatizacion-crm',
       icon: <Settings className="h-6 w-6" />,
       title: 'Automatización y CRM',
       description: 'Sistemas automatizados para optimizar procesos y mejorar la experiencia del cliente.',
       features: ['Marketing automation', 'CRM integration', 'Lead nurturing']
     }
   ];
+
+  const handleServiceClick = (serviceId: string) => {
+    navigate(`/services#${serviceId}`);
+  };
 
   return (
     <section id="services" className="py-16 bg-transparent">
@@ -60,6 +72,7 @@ const ServicesSection = () => {
             <Card 
               key={index}
               className="glass-card card-enhanced group p-5 hover:scale-105 transition-all duration-300 cursor-pointer border-0"
+              onClick={() => handleServiceClick(service.id)}
             >
               <div className="flex flex-col space-y-3">
                 <div className="flex items-center space-x-3">
@@ -76,6 +89,10 @@ const ServicesSection = () => {
                 <Button 
                   variant="link" 
                   className="text-nexo-blue-600 hover:text-nexo-orange-500 p-0 h-auto justify-start text-sm"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleServiceClick(service.id);
+                  }}
                 >
                   Ver más →
                 </Button>

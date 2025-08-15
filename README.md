@@ -9,7 +9,6 @@ NexoLab Growth Hub is a modern landing page for a digital marketing agency speci
 - **Modern Design**: Clean and professional interface with a focus on user experience
 - **Responsive Layout**: Fully responsive design that works seamlessly across all devices
 - **Service Showcase**: Detailed presentation of digital marketing services
-- **Client Testimonials**: Social proof through customer testimonials
 - **Contact Integration**: Easy-to-use contact forms and multiple communication channels
 - **Interactive Elements**: Smooth animations and transitions for enhanced user engagement
 
