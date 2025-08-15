@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Loader2 } from 'lucide-react';
-import { sendEmail, initEmailJS } from '@/lib/emailjs-config';
-import { validateContent, validateEmailStrict, sanitizeInput, SECURITY_CONFIG } from '@/lib/security-config';
 
 // X (Twitter) SVG icon as a React component
 const XIcon = ({ className = "" }) => (
@@ -35,7 +33,6 @@ interface FormData {
   company: string;
   service: string;
   message: string;
-  honeypot: string; // Campo anti-bot
 }
 
 const ContactSection = () => {
@@ -45,15 +42,9 @@ const ContactSection = () => {
     email: '',
     company: '',
     service: '',
-    message: '',
-    honeypot: '' // Campo anti-bot
+    message: ''
   });
   const [errors, setErrors] = useState<Partial<FormData>>({});
-
-  // Inicializar EmailJS al cargar el componente
-  useEffect(() => {
-    initEmailJS();
-  }, []);
 
   const contactInfo = [
     {
@@ -89,17 +80,11 @@ const ContactSection = () => {
   const validateForm = (): boolean => {
     const newErrors: Partial<FormData> = {};
 
-    // Validación honeypot (anti-bot)
-    if (formData.honeypot) {
-      throw new Error('Bot detectado');
-    }
-
     if (!formData.name.trim() || formData.name.length < 2) {
       newErrors.name = 'El nombre debe tener al menos 2 caracteres';
     }
 
-    // Validación de email más estricta
-    if (!formData.email.trim() || !validateEmailStrict(formData.email)) {
+    if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Por favor, ingresa un email válido';
     }
 
@@ -109,12 +94,6 @@ const ContactSection = () => {
 
     if (!formData.message.trim() || formData.message.length < 10) {
       newErrors.message = 'El mensaje debe tener al menos 10 caracteres';
-    }
-
-    // Validación de contenido sospechoso
-    const contentValidation = validateContent(formData.message);
-    if (!contentValidation.isValid) {
-      newErrors.message = contentValidation.reason || 'Contenido no permitido';
     }
 
     setErrors(newErrors);
@@ -131,44 +110,28 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      // Preparar los datos para EmailJS (usando las variables exactas de tu plantilla)
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        email: formData.email, // Para el From Email en settings
-        company: formData.company || 'No especificada',
-        service: formData.service,
-        message: formData.message
-      };
-
-      console.log('Enviando datos a EmailJS:', templateParams);
-
-      // Enviar email usando EmailJS
-      const result = await sendEmail(templateParams);
+      // Simular envío de email
+      console.log('Datos del formulario:', formData);
       
-      console.log('Resultado de EmailJS:', result);
+      // Simular tiempo de respuesta
+      await new Promise(resolve => setTimeout(resolve, 1500));
       
-      if (result.success) {
-        alert('¡Gracias por contactarnos! Te responderemos pronto.');
-        
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          service: '',
-          message: '',
-          honeypot: ''
-        });
-        setErrors({});
-      } else {
-        console.error('Error en EmailJS:', result.error);
-        alert(`Error: ${result.error || 'Error al enviar el email'}`);
-      }
+      // Simulación de envío exitoso
+      alert('¡Gracias por contactarnos! Te responderemos pronto.');
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        service: '',
+        message: ''
+      });
+      setErrors({});
       
     } catch (error) {
-      console.error('Error completo:', error);
-      alert(`Error al enviar el mensaje: ${error}`);
+      console.error('Error:', error);
+      alert('Error al enviar el mensaje. Por favor, inténtalo de nuevo.');
     } finally {
       setIsSubmitting(false);
     }
@@ -263,19 +226,6 @@ const ContactSection = () => {
             {/* Contact Form */}
             <Card className="p-6 glass-card card-enhanced border-0 animate-slide-in-right">
               <form onSubmit={handleSubmit} className="space-y-4">
-                {/* Campo Honeypot (invisible para humanos, visible para bots) */}
-                <div style={{ display: 'none' }}>
-                  <label>No llenar este campo (anti-spam)</label>
-                  <input
-                    type="text"
-                    name="honeypot"
-                    value={formData.honeypot}
-                    onChange={handleInputChange('honeypot')}
-                    tabIndex={-1}
-                    autoComplete="off"
-                  />
-                </div>
-
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium mb-1">Nombre *</label>

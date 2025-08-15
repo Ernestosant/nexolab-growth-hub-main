@@ -93,13 +93,6 @@ src/
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## Contact
-
-For questions about this project or NexoLab services:
-
-- Email: hola@nexolab.com
-- Phone: +1 (555) 123-4567
-- Address: Av. Tecnología 123
 
 ## License
 
