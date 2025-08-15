@@ -60,7 +60,7 @@ const ContactSection = () => {
     {
       icon: <Mail className="h-5 w-5" />,
       title: 'Email',
-      content: 'sales@thotlab.com'
+      content: 'sales@thotlab.tech'
     },
     {
       icon: <Clock className="h-5 w-5" />,
