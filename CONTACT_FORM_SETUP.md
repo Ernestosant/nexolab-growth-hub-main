@@ -83,8 +83,8 @@ El formulario de contacto utiliza EmailJS para enviar correos electrónicos dire
 ### Cambiar el email de destino
 En el archivo `src/components/ContactSection.tsx`, modifica las líneas:
 ```typescript
-to_email: "hola@nexolab.com", // Cambia por tu email
-recipient: "hola@nexolab.com" // Cambia por tu email
+to_email: "sales@thotlab.com", // Cambia por tu email
+recipient: "sales@thotlab.com" // Cambia por tu email
 ```
 
 ### Personalizar los servicios disponibles

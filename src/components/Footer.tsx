@@ -33,9 +33,9 @@ const Footer = () => {
       { name: "Marketing y Publicidad Digital", href: "/services#marketing-publicidad-digital", type: 'route' }
     ],
     'Contacto': [
-      { name: 'hola@nexolab.com', href: 'mailto:hola@nexolab.com', icon: <Mail className="h-4 w-4" />, type: 'external' },
-      { name: '+1 (555) 123-4567', href: 'tel:+15551234567', icon: <Phone className="h-4 w-4" />, type: 'external' },
-      { name: 'Av. Tecnología 123', href: '#', icon: <MapPin className="h-4 w-4" />, type: 'external' }
+      { name: 'sales@thotlab.com', href: 'mailto:sales@thotlab.com', icon: <Mail className="h-4 w-4" />, type: 'external' },
+      { name: ' ', href: 'tel:+53 53226980', icon: <Phone className="h-4 w-4" />, type: 'external' },
+      { name: 'Ave 5ta #1013, Chibas, La Habana, Cuba', href: '#', icon: <MapPin className="h-4 w-4" />, type: 'external' }
     ]
   };
 

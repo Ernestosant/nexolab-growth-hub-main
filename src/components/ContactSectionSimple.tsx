@@ -8,17 +8,17 @@ const ContactSectionSimple = () => {
     {
       icon: <MapPin className="h-5 w-5" />,
       title: 'Dirección',
-      content: 'Av. Tecnología 123, Ciudad Digital, CD 12345'
+      content: 'Ave 5ta #1013, Chibas, La Habana, Cuba' // Actualizado con la dirección correcta
     },
     {
       icon: <Phone className="h-5 w-5" />,
       title: 'Teléfono',
-      content: '+1 (555) 123-4567'
+      content: '+53 53226980' // Actualizado con el número de teléfono correcto
     },
     {
       icon: <Mail className="h-5 w-5" />,
       title: 'Email',
-      content: 'hola@nexolab.com'
+      content: 'sales@thotlab.com'
     },
     {
       icon: <Clock className="h-5 w-5" />,

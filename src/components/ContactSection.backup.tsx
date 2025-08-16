@@ -69,8 +69,8 @@ const ContactSection = () => {
         reply_to: data.email,
         sender_email: data.email,
         to_name: "NexoLab Growth Hub",
-        to_email: "hola@nexolab.com", // Cambia este email por el tuyo
-        recipient: "hola@nexolab.com" // Cambia este email por el tuyo
+        to_email: "sales@thotlab.com", // Cambia este email por el tuyo
+        recipient: "sales@thotlab.com" // Cambia este email por el tuyo
       };
 
       const result = await sendEmail(templateParams);
@@ -92,17 +92,17 @@ const ContactSection = () => {
     {
       icon: <MapPin className="h-5 w-5" />,
       title: 'Dirección',
-      content: 'Av. Tecnología 123, Ciudad Digital, CD 12345'
+      content: 'Ave 5ta #1013, Chibas, La Habana, Cuba'
     },
     {
       icon: <Phone className="h-5 w-5" />,
       title: 'Teléfono',
-      content: '+1 (555) 123-4567'
+      content: '+53 53226980'
     },
     {
       icon: <Mail className="h-5 w-5" />,
       title: 'Email',
-      content: 'hola@nexolab.com'
+      content: 'sales@thotlab.com'
     },
     {
       icon: <Clock className="h-5 w-5" />,
