@@ -4,6 +4,19 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Loader2 } from 'lucide-react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { contactFormSchema, type ContactFormData } from '@/lib/contact-form-schema';
+import { sendEmail } from '@/lib/emailjs-config';
+import toast from 'react-hot-toast';
+
+// Define interfaces for typing
+interface SocialLink {
+  icon: React.ReactNode;
+  name: string;
+  url: string;
+  className?: string;
+}
 
 // X (Twitter) SVG icon as a React component
 const XIcon = ({ className = "" }) => (
@@ -27,25 +40,54 @@ const WhatsAppIcon = ({ className = "" }) => (
   </svg>
 );
 
-interface FormData {
-  name: string;
-  email: string;
-  company: string;
-  service: string;
-  message: string;
-}
-
 const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    company: '',
-    service: '',
-    message: ''
-  });
-  const [errors, setErrors] = useState<Partial<FormData>>({});
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema)
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    
+    try {
+      const templateParams = {
+        title: `Contacto desde NexoLab: Mensaje de ${data.name}`,
+        email: data.email,
+        name: data.name,
+        company: data.company || 'No especificada',
+        service: data.service,
+        time: new Date().toLocaleString('es-ES'),
+        message: data.message,
+        from_name: data.name,
+        from_email: data.email,
+        reply_to: data.email,
+        sender_email: data.email,
+        to_name: "NexoLab Growth Hub",
+        to_email: "hola@nexolab.com", // Cambia este email por el tuyo
+        recipient: "hola@nexolab.com" // Cambia este email por el tuyo
+      };
+
+      const result = await sendEmail(templateParams);
+
+      if (result.success) {
+        toast.success('¡Gracias por contactarnos! Te responderemos pronto.');
+        reset();
+      } else {
+        toast.error(result.error || 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.');
+      }
+    } catch (error) {
+      console.error('Error inesperado:', error);
+      toast.error('Error inesperado. Por favor, inténtalo de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const contactInfo = [
     {
       icon: <MapPin className="h-5 w-5" />,
@@ -69,90 +111,13 @@ const ContactSection = () => {
     }
   ];
 
-  const socialLinks = [
+  const socialLinks: SocialLink[] = [
     { icon: <Facebook className="h-5 w-5" />, name: 'Facebook', url: 'https://www.facebook.com/share/1HmZS8mA1x/' },
     { icon: <Instagram className="h-5 w-5" />, name: 'Instagram', url: 'https://www.instagram.com/techlabas_ai_agency' },
     { icon: <XIcon className="h-5 w-5" />, name: 'X', url: 'https://x.com/ThotLabsAi?s=08', className: 'x-social-icon' },
     { icon: <TelegramIcon className="h-5 w-5" />, name: 'Telegram', url: 'https://t.me/thotlabsAI_redcolaborativadeIA' },
     { icon: <WhatsAppIcon className="h-5 w-5" />, name: 'WhatsApp', url: 'https://wa.me/5353226980', className: 'text-green-500 group-hover:text-green-600 transition-colors' }
   ];
-
-  const validateForm = (): boolean => {
-    const newErrors: Partial<FormData> = {};
-
-    if (!formData.name.trim() || formData.name.length < 2) {
-      newErrors.name = 'El nombre debe tener al menos 2 caracteres';
-    }
-
-    if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Por favor, ingresa un email válido';
-    }
-
-    if (!formData.service) {
-      newErrors.service = 'Por favor, selecciona un servicio';
-    }
-
-    if (!formData.message.trim() || formData.message.length < 10) {
-      newErrors.message = 'El mensaje debe tener al menos 10 caracteres';
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!validateForm()) {
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      // Simular envío de email
-      console.log('Datos del formulario:', formData);
-      
-      // Simular tiempo de respuesta
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Simulación de envío exitoso
-      alert('¡Gracias por contactarnos! Te responderemos pronto.');
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        service: '',
-        message: ''
-      });
-      setErrors({});
-      
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Error al enviar el mensaje. Por favor, inténtalo de nuevo.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleInputChange = (field: keyof FormData) => (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: e.target.value
-    }));
-    
-    // Clear error when user starts typing
-    if (errors[field]) {
-      setErrors(prev => ({
-        ...prev,
-        [field]: undefined
-      }));
-    }
-  };
 
   return (
     <>
@@ -173,7 +138,7 @@ const ContactSection = () => {
             <div className="space-y-6 animate-slide-in-left">
               <div className="grid sm:grid-cols-2 gap-4">
                 {contactInfo.map((info, index) => (
-                  <Card key={`contact-${index}`} className="p-5 glass-card card-enhanced border-0 hover:scale-105 transition-transform group">
+                  <Card key={index} className="p-5 glass-card card-enhanced border-0 hover:scale-105 transition-transform group">
                     <div className="flex items-start space-x-3">
                       <div className="p-2 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600 rounded-lg text-white group-hover:scale-110 transition-transform accent-glow">
                         {info.icon}
@@ -197,7 +162,7 @@ const ContactSection = () => {
                 <div className="flex space-x-3">
                   {socialLinks.map((social, index) => (
                     <a
-                      key={`social-${index}`}
+                      key={index}
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -225,33 +190,31 @@ const ContactSection = () => {
 
             {/* Contact Form */}
             <Card className="p-6 glass-card card-enhanced border-0 animate-slide-in-right">
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium mb-1">Nombre *</label>
                     <Input 
-                      value={formData.name}
-                      onChange={handleInputChange('name')}
+                      {...register('name')}
                       placeholder="Tu nombre completo" 
                       className="bg-background/50"
                       disabled={isSubmitting}
                     />
                     {errors.name && (
-                      <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                      <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
                     )}
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-1">Email *</label>
                     <Input 
-                      value={formData.email}
-                      onChange={handleInputChange('email')}
+                      {...register('email')}
                       type="email" 
                       placeholder="tu@email.com" 
                       className="bg-background/50"
                       disabled={isSubmitting}
                     />
                     {errors.email && (
-                      <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                      <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
                     )}
                   </div>
                 </div>
@@ -259,19 +222,20 @@ const ContactSection = () => {
                 <div>
                   <label className="block text-sm font-medium mb-1">Empresa</label>
                   <Input 
-                    value={formData.company}
-                    onChange={handleInputChange('company')}
+                    {...register('company')}
                     placeholder="Nombre de tu empresa" 
                     className="bg-background/50"
                     disabled={isSubmitting}
                   />
+                  {errors.company && (
+                    <p className="text-red-500 text-sm mt-1">{errors.company.message}</p>
+                  )}
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium mb-1">Servicio de interés *</label>
                   <select 
-                    value={formData.service}
-                    onChange={handleInputChange('service')}
+                    {...register('service')}
                     className="w-full p-3 border rounded-md bg-background/50 disabled:opacity-50"
                     disabled={isSubmitting}
                   >
@@ -283,22 +247,21 @@ const ContactSection = () => {
                     <option value="Consultoría Integral">Consultoría Integral</option>
                   </select>
                   {errors.service && (
-                    <p className="text-red-500 text-sm mt-1">{errors.service}</p>
+                    <p className="text-red-500 text-sm mt-1">{errors.service.message}</p>
                   )}
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium mb-1">Mensaje *</label>
                   <Textarea 
-                    value={formData.message}
-                    onChange={handleInputChange('message')}
+                    {...register('message')}
                     placeholder="Cuéntanos sobre tu proyecto y objetivos..."
                     rows={3}
                     className="bg-background/50"
                     disabled={isSubmitting}
                   />
                   {errors.message && (
-                    <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                    <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
                   )}
                 </div>
                 

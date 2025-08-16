@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - NexoLab</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .debug-info {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .warning { background: #fff3cd; color: #856404; }
+    </style>
+</head>
+<body>
+    <div class="debug-info">
+        <h1>🔧 Debug de NexoLab Growth Hub</h1>
+        <p>Esta página te ayudará a diagnosticar problemas con la aplicación principal.</p>
+        
+        <div id="status">
+            <div class="status warning">Verificando estado...</div>
+        </div>
+        
+        <h3>Enlaces de prueba:</h3>
+        <ul>
+            <li><a href="http://localhost:8082/" target="_blank">Aplicación Principal (Puerto 8082)</a></li>
+            <li><a href="http://localhost:8081/" target="_blank">Aplicación Principal (Puerto 8081)</a></li>
+            <li><a href="http://localhost:8080/" target="_blank">Aplicación Principal (Puerto 8080)</a></li>
+        </ul>
+        
+        <h3>Pasos para solucionar problemas:</h3>
+        <ol>
+            <li>Verifica que el servidor esté ejecutándose en uno de los puertos anteriores</li>
+            <li>Abre las herramientas de desarrollador (F12) en el navegador</li>
+            <li>Revisa la pestaña "Console" para ver errores de JavaScript</li>
+            <li>Revisa la pestaña "Network" para ver si todos los recursos se cargan correctamente</li>
+        </ol>
+        
+        <h3>Información técnica:</h3>
+        <ul>
+            <li><strong>Proyecto:</strong> NexoLab Growth Hub</li>
+            <li><strong>Framework:</strong> React + Vite + TypeScript</li>
+            <li><strong>Formulario:</strong> React Hook Form + EmailJS</li>
+            <li><strong>Notificaciones:</strong> React Hot Toast</li>
+        </ul>
+    </div>
+
+    <script>
+        // Script simple para verificar estado
+        setTimeout(() => {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = '<div class="status success">✅ Página de debug cargada correctamente</div>';
+            
+            // Intentar conectar con la aplicación principal
+            const ports = [8082, 8081, 8080];
+            let foundPort = null;
+            
+            ports.forEach(port => {
+                fetch(`http://localhost:${port}/`)
+                    .then(response => {
+                        if (response.ok && !foundPort) {
+                            foundPort = port;
+                            statusDiv.innerHTML += `<div class="status success">✅ Aplicación encontrada en puerto ${port}</div>`;
+                        }
+                    })
+                    .catch(error => {
+                        statusDiv.innerHTML += `<div class="status error">❌ Puerto ${port} no disponible</div>`;
+                    });
+            });
+            
+            setTimeout(() => {
+                if (!foundPort) {
+                    statusDiv.innerHTML += '<div class="status error">❌ No se encontró la aplicación en ningún puerto. Asegúrate de que esté ejecutándose.</div>';
+                }
+            }, 2000);
+        }, 1000);
+    </script>
+</body>
+</html>
