@@ -33,7 +33,7 @@ const Footer = () => {
       { name: "Marketing y Publicidad Digital", href: "/services#marketing-publicidad-digital", type: 'route' }
     ],
     'Contacto': [
-      { name: 'sales@thotlab.tech', href: 'mailto:sales@thotlab.tech', icon: <Mail className="h-4 w-4" />, type: 'external' },
+      { name: 'sales@thotlabs.tech', href: 'mailto:sales@thotlabs.tech', icon: <Mail className="h-4 w-4" />, type: 'external' },
       { name: '+53 53226980', href: 'tel:+53 53226980', icon: <Phone className="h-4 w-4" />, type: 'external' },
       { name: 'Ave 5ta #1013, Chibas, La Habana, Cuba', href: '#', icon: <MapPin className="h-4 w-4" />, type: 'external' }
     ]

@@ -69,8 +69,8 @@ const ContactSection = () => {
         reply_to: data.email,
         sender_email: data.email,
         to_name: "NexoLab Growth Hub",
-        to_email: "sales@thotlab.tech", // Cambia este email por el tuyo
-        recipient: "sales@thotlab.tech" // Cambia este email por el tuyo
+        to_email: "sales@thotlabs.tech", // Cambia este email por el tuyo
+        recipient: "sales@thotlabs.tech" // Cambia este email por el tuyo
       };
 
       const result = await sendEmail(templateParams);
@@ -102,7 +102,7 @@ const ContactSection = () => {
     {
       icon: <Mail className="h-5 w-5" />,
       title: 'Email',
-      content: 'sales@thotlab.tech'
+      content: 'sales@thotlabs.tech'
     },
     {
       icon: <Clock className="h-5 w-5" />,
