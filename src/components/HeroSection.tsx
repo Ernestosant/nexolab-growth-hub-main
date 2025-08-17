@@ -104,10 +104,10 @@ const HeroSection = () => {
                       {objective.icon}
                     </div>
                     <div>
-                      <h3 className="font-bold text-base mb-1 group-hover:text-nexo-orange-500 transition-colors">
+                      <h3 className="font-bold text-base mb-1 group-hover:text-nexo-orange-500 transition-colors !text-gray-800 dark:!text-white">
                         {objective.title}
                       </h3>
-                      <p className="text-muted-foreground text-sm text-enhanced-contrast">
+                      <p className="text-sm !text-gray-600 dark:!text-gray-200">
                         {objective.description}
                       </p>
                     </div>
