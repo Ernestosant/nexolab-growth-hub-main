@@ -76,7 +76,7 @@ const HeroSection = () => {
               <div className="relative flex flex-col items-center">
                 <div className="w-40 h-40 flex items-center justify-center animate-bounce">
                   <img 
-                    src="public/logothot_3.png" 
+                    src="/logothot_3.png" 
                     alt="NexoLab Logo" 
                     className="w-full h-full object-contain"
                   />
