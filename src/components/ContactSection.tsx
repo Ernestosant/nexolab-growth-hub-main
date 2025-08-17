@@ -275,7 +275,10 @@ const ContactSection = () => {
                 <p className="mb-3 opacity-90 text-sm">
                   Programa una llamada gratuita de 30 minutos con nuestro equipo.
                 </p>
-                <Button className="bg-white text-nexo-blue-700 hover:bg-nexo-white-100 hover:text-nexo-blue-800 transition-colors">
+                <Button 
+                  className="bg-white text-nexo-blue-700 hover:bg-nexo-white-100 hover:text-nexo-blue-800 transition-colors"
+                  onClick={() => window.open('https://wa.me/5353226980?text=Hola,%20me%20interesa%20agendar%20una%20reunión%20gratuita%20de%2030%20minutos%20con%20su%20equipo.', '_blank')}
+                >
                   Agendar Reunión
                 </Button>
               </Card>
