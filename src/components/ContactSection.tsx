@@ -40,6 +40,7 @@ interface FormData {
 
 const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -53,6 +54,26 @@ const ContactSection = () => {
   // Inicializar EmailJS al cargar el componente
   useEffect(() => {
     initEmailJS();
+  }, []);
+
+  // Detectar cuando el footer está visible para ajustar la posición del botón de WhatsApp
+  useEffect(() => {
+    const handleScroll = () => {
+      const footer = document.querySelector('footer');
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // El footer es visible si su parte superior está dentro de la ventana
+        const isVisible = footerRect.top < windowHeight;
+        setIsFooterVisible(isVisible);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Verificar inicial
+    
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const contactInfo = [
@@ -209,8 +230,8 @@ const ContactSection = () => {
             {/* Contact Info */}
             <div className="space-y-6 animate-slide-in-left">
               <div className="grid sm:grid-cols-2 gap-4">
-                {contactInfo.map((info, index) => (
-                  <Card key={`contact-${index}`} className="p-5 glass-card card-enhanced border-0 hover:scale-105 transition-transform group">
+                {contactInfo.map((info) => (
+                  <Card key={info.title} className="p-5 glass-card card-enhanced border-0 hover:scale-105 transition-transform group">
                     <div className="flex items-start space-x-3">
                       <div className="p-2 bg-gradient-to-br from-nexo-orange-500 to-nexo-blue-600 rounded-lg text-white group-hover:scale-110 transition-transform accent-glow">
                         {info.icon}
@@ -232,9 +253,9 @@ const ContactSection = () => {
               <div className="space-y-3">
                 <h3 className="text-lg font-semibold">Síguenos en redes sociales</h3>
                 <div className="flex space-x-3">
-                  {socialLinks.map((social, index) => (
+                  {socialLinks.map((social) => (
                     <a
-                      key={`social-${index}`}
+                      key={social.name}
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -374,7 +395,9 @@ const ContactSection = () => {
       </section>
 
       {/* Floating WhatsApp Button */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className={`fixed right-6 z-40 transition-all duration-300 ${
+        isFooterVisible ? 'bottom-32' : 'bottom-6'
+      }`}>
         <a
           href="https://wa.me/5353226980"
           target="_blank"
