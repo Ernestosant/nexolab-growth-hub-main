@@ -1,0 +1,16 @@
+name = "nexolab-growth-hub"
+compatibility_date = "2023-12-18"
+pages_build_output_dir = "dist"
+
+[env.production]
+name = "nexolab-growth-hub"
+
+# Variables de entorno para el despliegue
+[vars]
+NODE_ENV = "production"
+
+# Configuración para variables de entorno sensibles
+# Estas se configurarán desde el dashboard de Cloudflare
+# VITE_EMAILJS_SERVICE_ID
+# VITE_EMAILJS_PUBLIC_KEY  
+# VITE_EMAILJS_TEMPLATE_ID
