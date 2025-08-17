@@ -1,4 +1,4 @@
-name = "nexolab-growth-hub"
+name = 'thotlab-landingpage'
 compatibility_date = "2023-12-18"
 pages_build_output_dir = "dist"
 
