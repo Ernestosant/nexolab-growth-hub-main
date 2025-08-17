@@ -12,7 +12,7 @@ const HeroSection = () => {
       description: 'Soluciones creativas que marcan la diferencia'
     },
     {
-      icon: <img src="/icons/grafico-de-linea (1).gif" alt="Measurable Results" className="h-12 w-12" />,
+      icon: <img src="/icons/grafico-de-linea.gif" alt="Measurable Results" className="h-12 w-12" />,
       title: 'Resultados Medibles',
       description: 'Métricas claras que demuestran crecimiento'
     },
