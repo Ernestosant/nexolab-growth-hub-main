@@ -67,7 +67,7 @@ const Footer = () => {
             <div className="flex items-center space-x-2">
               <img 
                 src="/logothot_2.png" 
-                alt="NexoLab Logo" 
+                alt="thotlabs Logo" 
                 className="w-40 h-40 object-contain"
               />
             </div>
@@ -126,7 +126,7 @@ const Footer = () => {
         <div className="border-t border-nexo-blue-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-nexo-blue-300 text-sm">
-              © {new Date().getFullYear()} NexoLab. Todos los derechos reservados.
+              © {new Date().getFullYear()} thotlabs. Todos los derechos reservados.
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="/politicas_de_privacidad.pdf" className="text-nexo-blue-300 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">

@@ -6,7 +6,7 @@ export const emailjsConfig = {
   serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || '',
   templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '',
   // Dominios permitidos para validación adicional
-  allowedDomains: ['localhost', 'thotlabs.tech', 'www.thotlabs.tech', 'nexolab.com', 'www.nexolab.com']
+  allowedDomains: ['localhost', 'thotlabs.tech', 'www.thotlabs.tech', 'thotlabs.com', 'www.thotlabs.com']
 };
 
 // Validar dominio actual

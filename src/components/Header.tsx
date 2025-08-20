@@ -51,7 +51,7 @@ const Header = ({ isDark, toggleTheme }: HeaderProps) => {
         <Link to="/" className="flex items-center">
           <img 
             src="/logothot_2.png" 
-            alt="NexoLab Logo" 
+            alt="thotlabs Logo" 
             className="h-32 w-auto object-contain"
           />
         </Link>

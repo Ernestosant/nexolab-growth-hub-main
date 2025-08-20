@@ -1,9 +1,18 @@
+/* Optimized background - solo se carga cuando es necesario */
 body {
-  background-image: url('/kkroto66.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* Fallback gradient mientras carga la imagen */
+  background: linear-gradient(135deg, #0B1426 0%, #1e293b 50%, #0f172a 100%);
   background-attachment: fixed;
+}
+
+/* Solo aplicar imagen de fondo en dispositivos de alta resolución */
+@media (min-width: 1024px) and (min-resolution: 192dpi) {
+  body.high-performance {
+    background-image: url('/kkroto66.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
 .glass-card {

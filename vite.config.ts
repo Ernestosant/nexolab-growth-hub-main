@@ -40,13 +40,36 @@ export default defineConfig(({ mode }) => ({
     // Optimize build for modern Node.js
     target: 'esnext',
     minify: 'esbuild',
+    cssMinify: true,
+    // Increase chunk size warning limit for better bundling
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
           ui: ['@radix-ui/react-slot', 'class-variance-authority'],
+          animations: ['@/components/LaserParticleBackground', '@/components/ParticleBackground'],
+          router: ['react-router-dom'],
+          utils: ['clsx', 'tailwind-merge']
         },
+        // Optimize asset file names
+        assetFileNames: (assetInfo) => {
+          const name = assetInfo.name || 'asset';
+          const info = name.split('.');
+          const extType = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+            return `assets/images/[name]-[hash][extname]`;
+          }
+          if (/woff2?|eot|ttf|otf/i.test(extType)) {
+            return `assets/fonts/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
       },
     },
+    // Enable source maps for production debugging
+    sourcemap: false,
   },
 }));

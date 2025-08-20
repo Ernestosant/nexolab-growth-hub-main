@@ -57,7 +57,7 @@ const ContactSection = () => {
     
     try {
       const templateParams = {
-        title: `Contacto desde NexoLab: Mensaje de ${data.name}`,
+        title: `Contacto desde thotlabs: Mensaje de ${data.name}`,
         email: data.email,
         name: data.name,
         company: data.company || 'No especificada',
@@ -68,7 +68,7 @@ const ContactSection = () => {
         from_email: data.email,
         reply_to: data.email,
         sender_email: data.email,
-        to_name: "NexoLab Growth Hub",
+        to_name: "thotlabs Growth Hub",
         to_email: "sales@thotlabs.tech", // Cambia este email por el tuyo
         recipient: "sales@thotlabs.tech" // Cambia este email por el tuyo
       };

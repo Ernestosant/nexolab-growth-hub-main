@@ -1,8 +1,8 @@
-# NexoLab Growth Hub
+# thotlabs Growth Hub
 
 ## About the Project
 
-NexoLab Growth Hub is a modern landing page for a digital marketing agency specializing in comprehensive growth solutions for businesses. The website showcases NexoLab's expertise in branding, social media management, digital advertising, and web design.
+thotlabs Growth Hub is a modern landing page for a digital marketing agency specializing in comprehensive growth solutions for businesses. The website showcases thotlabs's expertise in branding, social media management, digital advertising, and web design.
 
 ## Features
 
@@ -45,7 +45,7 @@ git clone <YOUR_GIT_URL>
 
 2. Navigate to the project directory:
 ```bash
-cd nexolab-growth-hub
+cd thotlabs-growth-hub
 ```
 
 3. Install dependencies:
@@ -96,4 +96,4 @@ src/
 
 ## License
 
-This project is proprietary software of NexoLab. All rights reserved.
+This project is proprietary software of thotlabs. All rights reserved.

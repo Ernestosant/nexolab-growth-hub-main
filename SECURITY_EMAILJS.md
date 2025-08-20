@@ -1,11 +1,11 @@
-# 🔒 Configuración de Seguridad EmailJS - NexoLab
+# 🔒 Configuración de Seguridad EmailJS - thotlabs
 
 ## Medidas de Seguridad Implementadas
 
 ### 1. **Restricciones de Dominio**
 ✅ **Configurado en EmailJS Dashboard**
 - Solo dominios autorizados pueden enviar emails
-- Dominios permitidos: `nexolab.com`, `www.nexolab.com`, `localhost`
+- Dominios permitidos: `thotlabs.com`, `www.thotlabs.com`, `localhost`
 
 ### 2. **Rate Limiting**
 ✅ **Implementado en Frontend**
