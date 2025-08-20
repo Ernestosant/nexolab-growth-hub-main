@@ -1,5 +1,5 @@
 // Service Worker para cache de recursos optimizados
-const CACHE_NAME = 'nexolab-v1.0';
+const CACHE_NAME = 'thotlabs-v1.0';
 const urlsToCache = [
   '/',
   '/optimized/kkroto66-mobile.webp',

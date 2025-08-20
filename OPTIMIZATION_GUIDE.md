@@ -1,4 +1,4 @@
-# 🚀 Guía de Optimización de Performance - NexoLab Landing Page
+# 🚀 Guía de Optimización de Performance - thotlabs Landing Page
 
 ## 📊 Análisis del Problema
 - **Imagen de fondo actual**: `kkroto66.png` - **4.8 MB** ❌
@@ -152,7 +152,7 @@ const loadAnimations = async () => {
 
 ```javascript
 // service-worker.js
-const CACHE_NAME = 'nexolab-v1';
+const CACHE_NAME = 'thotlabs-v1';
 const urlsToCache = [
   '/',
   '/kkroto66-optimized.webp',

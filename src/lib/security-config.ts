@@ -17,8 +17,8 @@ export const SECURITY_CONFIG = {
   allowedDomains: [
     'localhost',
     '127.0.0.1',
-    'nexolab.com',
-    'www.nexolab.com'
+    'thotlabs.com',
+    'www.thotlabs.com'
   ],
   
   // Palabras prohibidas en mensajes (anti-spam básico)

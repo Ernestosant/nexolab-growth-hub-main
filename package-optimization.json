@@ -1,7 +1,7 @@
 {
   "name": "optimize-images",
   "version": "1.0.0",
-  "description": "Script para optimizar imágenes de NexoLab",
+  "description": "Script para optimizar imágenes de thotlabs",
   "scripts": {
     "optimize": "node optimize-images.js",
     "optimize:webp": "imagemin public/*.{jpg,jpeg,png} --out-dir=public/optimized --plugin=webp --plugin.webp.quality=80",

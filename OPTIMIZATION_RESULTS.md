@@ -1,4 +1,4 @@
-# ✅ Resumen de Optimizaciones Implementadas - NexoLab Landing Page
+# ✅ Resumen de Optimizaciones Implementadas - thotlabs Landing Page
 
 ## 🎯 **Problema Original**
 - **Imagen de fondo**: `kkroto66.png` - **4.8 MB** ❌

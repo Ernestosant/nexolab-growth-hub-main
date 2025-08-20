@@ -50,7 +50,7 @@ El formulario de contacto utiliza EmailJS para enviar correos electrónicos dire
     <title>{{title}}</title>
 </head>
 <body>
-    <h2>Nuevo mensaje de contacto desde NexoLab</h2>
+    <h2>Nuevo mensaje de contacto desde thotlabs</h2>
     
     <p><strong>Fecha:</strong> {{time}}</p>
     <p><strong>Nombre:</strong> {{name}}</p>
@@ -62,7 +62,7 @@ El formulario de contacto utiliza EmailJS para enviar correos electrónicos dire
     <p>{{message}}</p>
     
     <hr>
-    <p><em>Este mensaje fue enviado desde el formulario de contacto de NexoLab Growth Hub</em></p>
+    <p><em>Este mensaje fue enviado desde el formulario de contacto de thotlabs Growth Hub</em></p>
 </body>
 </html>
 ```
