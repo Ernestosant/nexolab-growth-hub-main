@@ -23,8 +23,8 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({ isDark = false 
     <div ref={backgroundRef} className="fixed inset-0 z-0">
       <OptimizedBackground isDark={isDark} />
       
-      {/* Solo cargar animaciones si están visibles y el dispositivo las soporta */}
-      {isVisible && (
+      {/* Partículas deshabilitadas - solo imagen de fondo */}
+      {/* {isVisible && (
         <Suspense fallback={<div className="absolute inset-0" />}>
           {window.innerWidth > 1024 ? (
             <LaserParticleBackground isDark={isDark} />
@@ -32,7 +32,7 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({ isDark = false 
             <ParticleBackground isDark={isDark} />
           )}
         </Suspense>
-      )}
+      )} */}
     </div>
   );
 };
