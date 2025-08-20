@@ -4,7 +4,7 @@ import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
-import AnimatedBackground from '@/components/AnimatedBackground';
+import OptimizedBackground from '@/components/OptimizedBackground';
 import { PreloadManager, usePerformanceMetrics } from '@/components/PreloadManager';
 import ServiceWorkerManager from '@/components/ServiceWorkerManager';
 
@@ -52,7 +52,7 @@ const Index = () => {
       <ServiceWorkerManager />
       <PreloadManager isDark={isDark} />
       <div className="min-h-screen text-foreground relative overflow-hidden">
-        <AnimatedBackground isDark={isDark} />
+        <OptimizedBackground isDark={isDark} />
         <div className="relative z-10">
           <Header isDark={isDark} toggleTheme={toggleTheme} />
           <HeroSection />
