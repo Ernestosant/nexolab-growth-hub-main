@@ -329,7 +329,7 @@ const ContactSection = () => {
           href="https://wa.me/5353226980"
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative flex items-center justify-center w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-bounce"
+          className="group relative flex items-center justify-center w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
           title="Contáctanos por WhatsApp"
         >
           {/* WhatsApp Icon */}
@@ -339,9 +339,6 @@ const ContactSection = () => {
           <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
             <span className="text-xs text-white font-bold">1</span>
           </div>
-          
-          {/* Pulse Animation */}
-          <div className="absolute inset-0 rounded-full bg-green-400 opacity-75 animate-ping"></div>
           
           {/* Tooltip */}
           <div className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white text-sm px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
