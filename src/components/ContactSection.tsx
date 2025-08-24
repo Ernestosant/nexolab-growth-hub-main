@@ -85,7 +85,7 @@ const ContactSection = () => {
     {
       icon: <Phone className="h-5 w-5" />,
       title: 'Teléfono',
-      content: '+53 53226980'
+      content: '+53 50001538'
     },
     {
       icon: <Mail className="h-5 w-5" />,
@@ -104,7 +104,7 @@ const ContactSection = () => {
     { icon: <Instagram className="h-5 w-5" />, name: 'Instagram', url: 'https://www.instagram.com/techlabas_ai_agency' },
     { icon: <XIcon className="h-5 w-5" />, name: 'X', url: 'https://x.com/ThotLabsAi?s=08', className: 'x-social-icon' },
     { icon: <TelegramIcon className="h-5 w-5" />, name: 'Telegram', url: 'https://t.me/thotlabsAI_redcolaborativadeIA' },
-    { icon: <WhatsAppIcon className="h-5 w-5" />, name: 'WhatsApp', url: 'https://wa.me/5353226980', className: 'text-green-500 group-hover:text-green-600 transition-colors' }
+    { icon: <WhatsAppIcon className="h-5 w-5" />, name: 'WhatsApp', url: 'https://wa.me/5350001538', className: 'text-green-500 group-hover:text-green-600 transition-colors' }
   ];
 
   const validateForm = (): boolean => {
@@ -277,7 +277,7 @@ const ContactSection = () => {
                 </p>
                 <Button 
                   className="bg-white text-nexo-blue-700 hover:bg-nexo-white-100 hover:text-nexo-blue-800 transition-colors"
-                  onClick={() => window.open('https://wa.me/5353226980?text=Hola,%20me%20interesa%20agendar%20una%20reunión%20gratuita%20de%2030%20minutos%20con%20su%20equipo.', '_blank')}
+                  onClick={() => window.open('https://wa.me/5350001538?text=Hola,%20me%20interesa%20agendar%20una%20reunión%20gratuita%20de%2030%20minutos%20con%20su%20equipo.', '_blank')}
                 >
                   Agendar Reunión
                 </Button>
@@ -402,10 +402,10 @@ const ContactSection = () => {
         isFooterVisible ? 'bottom-32' : 'bottom-6'
       }`}>
         <a
-          href="https://wa.me/5353226980"
+          href="https://wa.me/5350001538"
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative flex items-center justify-center w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-bounce"
+          className="group relative flex items-center justify-center w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
           title="Contáctanos por WhatsApp"
         >
           {/* WhatsApp Icon */}
@@ -415,9 +415,6 @@ const ContactSection = () => {
           <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
             <span className="text-xs text-white font-bold">1</span>
           </div>
-          
-          {/* Pulse Animation */}
-          <div className="absolute inset-0 rounded-full bg-green-400 opacity-75 animate-ping"></div>
           
           {/* Tooltip */}
           <div className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white text-sm px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
