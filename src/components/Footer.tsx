@@ -34,7 +34,7 @@ const Footer = () => {
     ],
     'Contacto': [
       { name: 'sales@thotlabs.tech', href: 'mailto:sales@thotlabs.tech', icon: <Mail className="h-4 w-4" />, type: 'external' },
-      { name: '+53 53226980', href: 'tel:+53 53226980', icon: <Phone className="h-4 w-4" />, type: 'external' },
+      { name: '+53 50001538', href: 'tel:+53 50001538', icon: <Phone className="h-4 w-4" />, type: 'external' },
       { name: 'Ave 5ta #1013, Chibas, La Habana, Cuba', href: '#', icon: <MapPin className="h-4 w-4" />, type: 'external' }
     ]
   };
