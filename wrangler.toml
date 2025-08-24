@@ -1,7 +1,0 @@
-name = 'thotlab-landingpage'
-compatibility_date = "2023-12-18"
-pages_build_output_dir = "dist"
-
-# Variables de entorno para el despliegue
-[vars]
-NODE_ENV = "production"

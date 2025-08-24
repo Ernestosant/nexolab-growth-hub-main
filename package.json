@@ -13,8 +13,6 @@
     "build:optimized": "npm run optimize:images && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "npm run build && wrangler pages deploy dist",
-    "deploy:preview": "npm run build && wrangler pages deploy dist --compatibility-date=2023-12-18",
     "optimize:images": "node optimize-images.js",
     "analyze": "npm run build && npx vite-bundle-analyzer dist/assets/*.js"
   },
