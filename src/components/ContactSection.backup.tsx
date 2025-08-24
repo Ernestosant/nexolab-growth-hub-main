@@ -116,7 +116,7 @@ const ContactSection = () => {
     { icon: <Instagram className="h-5 w-5" />, name: 'Instagram', url: 'https://www.instagram.com/techlabas_ai_agency' },
     { icon: <XIcon className="h-5 w-5" />, name: 'X', url: 'https://x.com/ThotLabsAi?s=08', className: 'x-social-icon' },
     { icon: <TelegramIcon className="h-5 w-5" />, name: 'Telegram', url: 'https://t.me/thotlabsAI_redcolaborativadeIA' },
-    { icon: <WhatsAppIcon className="h-5 w-5" />, name: 'WhatsApp', url: 'https://wa.me/5353226980', className: 'text-green-500 group-hover:text-green-600 transition-colors' }
+    { icon: <WhatsAppIcon className="h-5 w-5" />, name: 'WhatsApp', url: 'https://wa.me/5350001538', className: 'text-green-500 group-hover:text-green-600 transition-colors' }
   ];
 
   return (
@@ -289,7 +289,7 @@ const ContactSection = () => {
       {/* Floating WhatsApp Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <a
-          href="https://wa.me/5353226980"
+          href="https://wa.me/5350001538"
           target="_blank"
           rel="noopener noreferrer"
           className="group relative flex items-center justify-center w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
