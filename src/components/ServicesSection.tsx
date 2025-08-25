@@ -4,6 +4,14 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Brain, Globe, Palette, Share2, Megaphone, Settings } from 'lucide-react';
 
+// Helper function to render text with translation protection
+const renderTranslationSafeText = (text: string) => {
+  if (text === "Branding") {
+    return <span translate="no" lang="en">{text}</span>;
+  }
+  return text;
+};
+
 const ServicesSection = () => {
   const navigate = useNavigate();
   const services = [
@@ -80,7 +88,7 @@ const ServicesSection = () => {
                     {service.icon}
                   </div>
                   <h3 className="font-bold text-lg group-hover:text-nexo-orange-500 transition-colors">
-                    {service.title}
+                    {renderTranslationSafeText(service.title)}
                   </h3>
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed text-enhanced-contrast">

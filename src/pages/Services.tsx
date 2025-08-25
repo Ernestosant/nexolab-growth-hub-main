@@ -8,6 +8,13 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Brain, Globe, Palette, Share2, Megaphone, Settings, CheckCircle, ArrowRight } from 'lucide-react';
 
+// Helper function to render text with translation protection
+const renderTranslationSafeText = (text: string) => {
+  if (text === "Branding") {
+    return <span translate="no" lang="en">{text}</span>;
+  }
+  return text;
+};
 const Services = () => {
   const [isDark, setIsDark] = useState(false);
   const location = useLocation();
@@ -173,7 +180,7 @@ const Services = () => {
                         </div>
                         <div>
                           <h2 className="text-xl font-bold text-foreground">
-                            {service.title}
+                            {renderTranslationSafeText(service.title)}
                           </h2>
                         </div>
                       </div>
@@ -212,7 +219,7 @@ const Services = () => {
                         </div>
                         <div>
                           <h2 className="text-xl font-bold text-foreground">
-                            {service.title}
+                            {renderTranslationSafeText(service.title)}
                           </h2>
                         </div>
                       </div>

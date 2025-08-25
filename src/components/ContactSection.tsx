@@ -350,7 +350,7 @@ const ContactSection = () => {
                     disabled={isSubmitting}
                   >
                     <option value="">Selecciona un servicio</option>
-                    <option value="Branding">Branding</option>
+                    <option value="Branding"><span translate="no" lang="en">Branding</span></option>
                     <option value="Redes Sociales">Redes Sociales</option>
                     <option value="Publicidad Digital">Publicidad Digital</option>
                     <option value="Diseño Web">Diseño Web</option>

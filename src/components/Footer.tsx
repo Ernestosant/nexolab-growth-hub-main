@@ -2,6 +2,14 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 
+// Helper function to render text with translation protection
+const renderTranslationSafeText = (text: string) => {
+  if (text === "Branding") {
+    return <span translate="no" lang="en">{text}</span>;
+  }
+  return text;
+};
+
 // X (Twitter) SVG icon as a React component
 const XIcon = ({ className = "" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 509.64" className={className} fill="currentColor">
@@ -104,7 +112,7 @@ const Footer = () => {
                         className="text-nexo-blue-200 hover:text-white transition-colors flex items-center space-x-2"
                       >
                         {link.icon && <span>{link.icon}</span>}
-                        <span>{link.name}</span>
+                        <span>{renderTranslationSafeText(link.name)}</span>
                       </a>
                     ) : (
                       <button
@@ -112,7 +120,7 @@ const Footer = () => {
                         className="text-nexo-blue-200 hover:text-white transition-colors flex items-center space-x-2 text-left"
                       >
                         {link.icon && <span>{link.icon}</span>}
-                        <span>{link.name}</span>
+                        <span>{renderTranslationSafeText(link.name)}</span>
                       </button>
                     )}
                   </li>
