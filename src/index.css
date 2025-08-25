@@ -389,31 +389,6 @@
   .bg-image-background {
     background: url('/kkroto66.png') center center/cover no-repeat fixed;
   }
-
-  /* Versión responsive para móviles */
-  @media (max-width: 767px) {
-    .bg-image-background {
-      background: url('/kkroto66.png') center center/cover no-repeat scroll;
-      min-height: 100vh;
-    }
-
-    /* Asegurar que el fondo cubra toda la pantalla en móviles */
-    body {
-      overflow-x: hidden;
-    }
-
-    /* Optimizaciones específicas para móviles */
-    .fixed {
-      position: absolute !important;
-    }
-  }
-
-  /* Mejoras adicionales para dispositivos táctiles */
-  @media (hover: none) and (pointer: coarse) {
-    .bg-image-background {
-      background-attachment: scroll !important;
-    }
-  }
    
   .hero-gradient {
     /* No background image needed here anymore as it's applied globally */
